@@ -1,0 +1,76 @@
+/*####################        CSS global pour le dossier sites         ####################*/
+/*	##	MEDIA QUERIES	##	*/
+/* from... */
+/* to... */
+/* from... to... */
+/*	Variable's color	*/
+/*	for the whole page	*/
+@media screen and (max-width: 991px) {
+  body {
+    background-size: 100%;
+    background-color: gray;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+
+/*	##	HEADER	##	**/
+@media screen and (max-width: 767px) {
+  span {
+    font-size: 0.8em;
+  }
+}
+
+/*	##	MAIN	##	**/
+h2 {
+  text-align: center;
+  padding: 20px 0 10px 0;
+}
+
+@media screen and (max-width: 767px) {
+  h2 {
+    font-size: 1.3em;
+  }
+}
+
+.icon-description {
+  float: left;
+  padding-right: 10px;
+  padding-top: 3px;
+}
+
+.li {
+  list-style-type: none;
+  padding: 35px 0 35px 0;
+}
+
+.color-h2 {
+  color: orangered;
+  font-weight: bold;
+}
+
+p {
+  line-height: 1.5em;
+  font-size: 1.3rem;
+}
+
+@media screen and (min-width: 576px) and (max-width: 1199px) {
+  p {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  p {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .btn {
+    font-size: 1em;
+  }
+}
+
+/*	##	FOOTER	##	**/
+/*# sourceMappingURL=globalSites.css.map */

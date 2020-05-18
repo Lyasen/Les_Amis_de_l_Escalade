@@ -1,0 +1,187 @@
+/*####################        sites.html         ####################*/
+/*	##	MEDIA QUERIES	##	*/
+@import "_mixin";
+
+/*	Variable's color	*/
+@import "_themeColor";
+
+/*	for the whole page	*/
+body {
+	background-image: url(../../img/img_pages/bg-sites.jpg);
+}
+
+/*	##	HEADER	##	*/
+h4 {
+	font-size: 2rem;
+}
+.sites-nav {
+	justify-content: center;
+}
+.sites-navlink {
+	color: black;
+	font-family: 'Engagement', cursive;
+	&:hover {
+		text-decoration: none;
+		color: orangered;
+	}
+}
+.title {
+	@include media-max("desktop") {
+		text-indent: -9999px;
+		line-height: 0;
+		&:after {
+			content: "Les Sites des Amis";
+			text-indent: 0;
+			line-height: initial;
+			display: block;
+		}
+	}
+	@include media-between("tablet-lg", "desktop") {
+		&:after {
+			font-size: 0.8em;
+		}
+	}
+	@include media-max("tablet-lg") {
+		&:after {
+			font-size: 0.6em;
+		}
+	}
+	@include media-max("tablet") {
+		width: max-content;
+	}
+}
+
+/*	Responsive's modification for the nav-bar	*/
+@mixin country {
+	text-indent: 0;
+	font-size: inherit;
+	line-height: initial;
+	display: block;
+}
+
+.france {
+	@include media-max("desktop") {
+		text-indent: -9999px;
+		line-height: 0;
+		&:after {
+			content: "France";
+			@include country;
+		}
+	}
+	@include media-max("phone") {
+		display: none;
+	}
+}
+
+.europe {
+	@include media-max("desktop") {
+		text-indent: -9999px;
+		line-height: 0;
+		&:after {
+			content: "Europe";
+			@include country;
+		}
+	}
+	@include media-max("phone") {
+		display: none;
+	}
+}
+
+.monde {
+	@include media-max("desktop") {
+		text-indent: -9999px;
+		line-height: 0;
+		&:after {
+			content: "Monde";
+			@include country;
+		}
+	}
+	@include media-max("phone") {
+		display: none;
+	}
+}
+/*_______________________________________*/
+
+.mountain-img {
+	@include media-max("tablet") {
+		display: none;
+	}
+}
+
+.header-title {
+	@include media-between("phone", "tablet") {
+		margin-right: 70px;
+	}
+	@include media-max("phone") {
+		margin-right: auto;
+		margin-left: auto;
+		padding-left: 30px;
+	}
+}
+
+.a-menu {
+	@include media-between("phone", "tablet") {
+		font-size: 0.9em;
+	}
+	@include media-max("phone") {
+		font-size: 0.7em;
+		text-align: center;
+	}
+}
+
+.main-nav {
+	@include media-max("phone") {
+		margin-top: -20px;
+	}
+}
+
+/*	##	MAIN	##	*/
+.col {
+	padding: 0 50px 0 50px;
+}
+.sites-h1 {
+	color: azure;
+	font-family: 'Engagement', cursive;
+	margin-bottom: 0;
+	padding: 0 10px 15px 20px;
+	@include media-max("phone") {
+		font-size: 1.8em;
+	}
+}
+h3 {
+	padding-left: 50px;
+}
+.shift {
+	padding-left: 20px;
+	color: $unbleachedColor;
+	font-weight: bold;
+	@include media-between("tablet", "tablet-lg") {
+		font-size: 0.8em;
+	}
+	@include media-between("phone", "tablet-lg") {
+		font-size: 0.7em;
+	}
+	@include media-max("phone") {
+		font-size: 0.5em;
+		padding-left: 10px;
+	}
+	&:hover {
+		text-decoration: none;
+		color: orangered;
+	}
+}
+.icon-moutain {
+	padding: 0 0 15px 20px;
+	@include media-max("phone") {
+		padding-left: 0;
+	}
+}
+.icon-flag {
+	padding: 0 10px 10px 0;
+	@include media-max("phone") {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+/*	##	FOOTER	##	*/

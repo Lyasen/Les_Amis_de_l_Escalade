@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../MainPages/pagesCss/global.css">
+    <link rel="stylesheet" href="../FormCss/formCommentary.css">
+    <link rel="shortcut icon" href="../../img/img_pages/climb.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Engagement&display=swap" rel="stylesheet">
+    <title>Laissez vos commentaires sur l'actu des Amis de l'escalade</title>
+    <meta name="description" content="Voici la suite de notre formulaire de partage !">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="header-nav navbar navbar-expand navbar-dark">
+                        <div class="col-5">
+                            <h1 class="title">Les amis de l'escalade</h1>
+                        </div>
+
+                        <div class="col-2">
+                            <img class="header-img" src="../../img/img_pages/form_inscription.png" alt="topo">
+                            <img class="header-img-2" src="../../img/img_pages/form_inscription-64.png" alt="topo">
+                        </div>
+
+                        <div class="col-5">
+                            <h3 class="nav-h3">Vos commentaires</h3>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <textarea name="commentaries" id="com" cols="110" rows="15" minlength="10" maxlength="2000" placeholder="Ecrivez ici votre commentaire. Vous êtes dans une communauté sympa ! Evitez svp les injures, grossièretés, répondez avec courtoisie..."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <div class="row">
+                <div class="offset-2 col-3">
+                    <div class="btn-wrapper">
+                        <button type="button" class="btn">Annulez</button>
+                    </div>
+                    <canvas id="canvas"></canvas>
+                </div>
+                <div class="offset-3 col-2">
+                    <div class="btn-wrapper">
+                        <button type="button" class="btn">Envoyez</button>
+                    </div>
+                    <canvas id="canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-first-nav col-6">
+                    <nav class="first-nav navbar navbar-expand navbar-dark">
+                        <div class="collapse navbar-collapse justify-content-center">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-weight nav-link">A propos...</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-weight nav-link active">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="footer-second-nav col-6">
+                    <nav class="icon navbar navbar-expand navbar-dark">
+                        <div class="footer-icon collapse navbar-collapse justify-content-end">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"><img src="../../img/img_pages/facebook.png"
+                                            alt="facebook" title="Facebook" width="32" height="32"></a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"><img src="../../img/img_pages/twitter.png"
+                                            alt="twitter" title="Twitter" width="32" height="32"></a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link"><img src="../../img/img_pages/verti-call.png"
+                                            alt="verti-call" title="Verti-Call" width="32" height="32"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <nav class="links navbar navbar-expand navbar-dark">
+                        <h6>Liens utiles:</h6>
+                        <div class="useful-links collapse navbar-collapse">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="https://www.ffme.fr/" class="nav-weight nav-link active"
+                                        title="Fédération Française de la Montagne et de l'Escalade">FFME</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="https://climbingaway.fr/fr/" class="nav-weight nav-link"
+                                        title="Combien de temps dure la chute, très chère !">Climbingaway</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe"
+                                        class="nav-weight nav-link"
+                                        title="Du Red Bull ! J'appelle ma fille ursule !">Red Bull</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

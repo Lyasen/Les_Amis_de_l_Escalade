@@ -1,0 +1,209 @@
+/*####################        main.html         ####################*/
+/*	##	MEDIA QUERIES	##	*/
+@import "_mixin";
+
+/*	Variable's color	*/
+@import "_themeColor";
+
+/*	for the whole page	*/
+body {
+	background-image: url(../../img/img_pages/bg-main.jpg);
+}
+/*	##	HEADER	##	*/
+.titre-perso {
+	color: $whiteColor;
+	@include media-max("desktop") {
+		font-size: 3em;
+	}
+	@include media-between("tablet", "tablet-lg") {
+		padding: 0;
+		text-align: center;
+	}
+	@include media-max("tablet") {
+		text-align: center;
+	}
+}
+.connexion {
+	padding-left: 75px;
+	@include media-max("tablet-lg") {
+		padding: 0;
+	}
+	@include media-between("tablet", "tablet-lg") {
+		word-wrap: break-word;
+	}
+}
+
+.drop {
+	font-size: 18px;
+	padding-left: 10px;
+	background-color: $orangeColor;
+	border-color: $orangeColor;
+	color: $whiteColor;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	&:hover {
+		background-color: $whiteColor;
+		border-color: $whiteColor;
+		color: $orangeColor;	
+	}
+	@include media-between("tablet", "desktop") {
+		font-size: 0.9em;
+	}
+	@include media-max("tablet") {
+		font-size: 0.8em;
+	}
+}
+
+.down {
+	font-size: 18px;
+	padding: 5px;
+	background-color: $orangeColor;
+	border-color: $orangeColor;
+	color: $whiteColor;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	&:hover {
+		background-color: $whiteColor;
+		border-color: $whiteColor;
+		color: $orangeColor;		
+	}
+}
+
+.input-search {
+	padding-left: 35px;
+}
+
+.fa {
+	margin-right: 10px;
+}
+
+.fafa {
+	font-size: 18px;
+	padding-right: 20px;
+	background-color: $orangeColor;
+	border-color: $orangeColor;
+	color: $whiteColor;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	&:hover {
+		background-color: $whiteColor;
+		border-color: $whiteColor;
+		color: $orangeColor;
+	}
+	@include media-between("tablet", "desktop") {
+		font-size: 0.9em;
+	}
+	@include media-max("tablet") {
+		font-size: 0.8em;
+	}
+}
+
+form {
+	@include media-between("tablet", "tablet-lg") {
+		padding: 0;
+	}
+}
+
+.form-inline {
+	@include media-max("tablet") {
+		padding-left: 0;
+		justify-content: center;
+	}
+}
+
+.input-group {
+	@include media-max("tablet") {
+		margin-bottom: 20px;
+	}
+}
+
+.header-nav {
+	@include media-max("tablet") {
+		display: block;
+		position: relative;
+	}
+}
+
+.a-menu {
+	@include media-max("tablet") {
+		font-size: 0.8em;
+		text-align: center;
+	}
+}
+
+/*	##	MAIN	##	*/
+.carousel {
+	@include media-max("phone") {
+		background-size: contain;
+	}
+}
+
+.change {
+	margin-bottom: 0;
+	padding: 0;
+	text-align: center;
+}
+.text {
+	color: $whiteColor;
+}
+.format {
+	width: 200px;
+	height: 100px;
+	margin-bottom: 280px;
+	margin-left: -150px;
+	@include media-max("phone") {
+		width: auto;
+		margin-left: 0;
+	}
+}
+
+.p-pad-1 {
+	@include media-between("tablet-lg", "desktop") {
+		padding-left: 30px;
+	}
+	@include media-max("tablet-lg") {
+		font-size: 0.9em;
+	}
+	@include media-between("tablet", "tablet-lg") {
+		padding-left: 60px;
+	}
+	@include media-between("phone", "tablet") {
+		padding-left: 80px;
+		margin-top: -50px;
+	}
+	@include media-max("phone") {
+		padding-left: 110px;
+		margin-top: -50px;	
+		visibility: hidden;	
+		text-indent: -1170px;
+		&:after {
+		visibility: visible;
+		content: "Les amis de l'escalade est un site de partage. Vous y trouverez les informations utiles sur les spots français et internationaux.";
+		}
+	}
+}
+
+.p-pad-2 {
+	@include media-between("tablet-lg", "desktop") {
+		padding-left: 30px;
+	}
+	@include media-max("tablet-lg") {
+		font-size: 0.9em;
+	}
+	@include media-between("tablet", "tablet-lg") {
+		padding-left: 60px;
+	}
+	@include media-between("phone", "tablet") {
+		padding-left: 80px;
+	}
+	@include media-max("phone") {
+		padding-left: 110px;
+		visibility: hidden;
+		&:before {
+			visibility: visible;
+			content: " Vous pourrez lister les topos de nos membres et faire une demande de réservation.";
+		}
+	}
+}
+
+/*	##	FOOTER	##	*/
