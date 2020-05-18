@@ -1,0 +1,90 @@
+/*####################        form_inscription.html         ####################*/
+/*	##	MEDIA QUERIES	##	*/
+@import "../../MainPages/pagesCss/mixin";
+
+/*	Variable's color	*/
+@import "../../MainPages/pagesCss/themeColor";
+
+/*	for the whole page	*/
+body {
+	background-image: url(../../img/img_pages/bg-form-topo.jpg);
+}
+
+/*	##	HEADER	##	*/
+.title {
+	text-align: center;
+	margin-top: 10px;
+	@include media-between("phone", "tablet-lg") {
+		font-size: 3em;
+	}
+	@include media-max("phone") {
+		display: none;
+	}
+}
+.nav-h3 {
+	padding-left: 80px;
+	margin-top: 10px;
+	@include media-between("phone", "tablet-lg") {
+		font-size: 3em;
+	}
+	@include media-max("tablet") {
+		padding-left: 0;
+	}
+	@include media-max("phone") {
+		font-size: 2.5em;
+		width: max-content;
+		margin-left: -100px;
+	}
+}
+
+header {
+	margin-bottom: 100px;
+	@include media-max("tablet-lg") {
+		margin-bottom: 0;
+	}
+}
+
+.header-img {
+	top: -10px;
+	@include media-between("tablet", "tablet-lg") {
+		visibility: hidden;
+	}
+	@include media-max("tablet") {
+		display: none;
+	}
+}
+
+.header-img-2 {
+	@include media-between("tablet", "tablet-lg") {
+		visibility: visible;
+        position: absolute;
+        top: -30px;
+        right: 20px;
+	}
+	@include media-max("tablet") {
+		display: none;
+	}
+}
+
+/*	##	MAIN	##	*/
+.topo-container {
+	width: auto;
+	margin: auto;
+	text-align: center;
+}
+.topo-a {
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.col-form-label,
+.form-check-label {
+	@include media-max("phone") {
+		font-size: 0.8em;
+	}
+}
+
+/*_______________________________________________________________*/
+
+/*	##	FOOTER	##	*/

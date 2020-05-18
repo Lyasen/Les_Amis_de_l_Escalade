@@ -1,0 +1,159 @@
+/*####################        topos.html         ####################*/
+/*	##	MEDIA QUERIES	##	*/
+@import "_mixin";
+
+/*	Variable's color	*/
+@import "_themeColor";
+
+/*	for the whole page	*/
+body {
+	background-image: url(../../img/img_pages/3d.jpg);
+}
+
+/*	##	HEADER	##	*/
+.title {
+	@include media-between("tablet-lg", "desktop") {
+		font-size: 3em;
+	}
+	@include media-max("tablet") {
+		text-indent: -9999px;
+		line-height: 0;
+	}
+}
+
+.nav-h3 {
+	@include media-between("tablet-lg", "desktop") {
+		font-size: 3em;
+	}
+	@include media-between("phone", "tablet") {
+		margin-left: -275px;
+	}
+	@include media-max("phone") {
+		margin-left: -200px;
+		font-size: 2.5em;
+	}
+}
+
+.header-img {
+	margin-top: -50px;
+	@include media-between("tablet", "tablet-lg") {
+		margin-left: -20px;
+	}
+	@include media-max("tablet") {
+		display: none;
+	}
+}
+
+.menu-links {
+	margin-top: 50px;
+	@include media-between("phone", "tablet") {
+		margin-top: 10px;
+	}
+	@include media-max("phone") {
+		margin-top: -10px;
+	}
+}
+
+.a-menu {
+	@include media-max("tablet") {
+		font-size: 0.8em;
+		text-align: center;
+	}
+}
+
+/*	##	MAIN	##	*/
+/*	Taille et centrage du tableau */
+.card-limit {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.window-length {
+	width: auto;
+}
+/*_______________________________*/
+
+.active {
+	color: black;
+}
+p {
+	font-size: 1.3em;
+	text-align: center;
+	@include media-max("tablet") {
+		font-size: 1em;
+	}
+	@include media-max("phone") {
+		font-size: 0.8em;
+	}
+}
+.choice-place {
+	background-color: rgb(105, 161, 40);
+	color: $unbleachedColor;
+}
+.topo {
+	min-width: auto; 
+	text-align: center;
+}
+.place {
+	min-width: auto; 
+	text-align: center;
+}
+.description {
+	max-width: auto;
+}
+.date {
+	width: auto; 
+	text-align: center;
+}
+
+.card-body {
+	background-color: rgb(16, 16, 66);
+}
+
+span {
+	color: orangered;
+}
+
+.table {
+	background-color: rgb(16, 16, 66);
+	margin-bottom: 0;
+}
+
+.table thead {
+	@include media-max("tablet") {
+		display: none;
+	}
+}
+
+.estamp {
+	height: 57px;
+}
+
+th {
+	text-align: center;
+}
+
+.table td {
+	color: $unbleachedColor;
+	@include media-max("tablet") {
+		display: block;
+		text-align: right;
+		&:before {
+			content: attr(data-label);
+			float: left;
+			font-weight: bold;
+		}
+	}
+	@include media-max("phone") {
+		font-size: 0.8em;
+	}
+}
+
+.table tr {
+	@include media-max("tablet") {
+		display: block;
+		margin-bottom: 40px;
+	}
+}
+
+/*	##	FOOTER	##	*/

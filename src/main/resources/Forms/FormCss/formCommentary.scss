@@ -1,0 +1,80 @@
+/*####################        form_partage2.html         ####################*/
+/*	##	MEDIA QUERIES	##	*/
+@import "../../MainPages/pagesCss/mixin";
+
+/*	Variable's color	*/
+@import "../../MainPages/pagesCss/themeColor";
+
+/*	for the whole page	*/
+body {
+	background-image: url(../../img/img_pages/bg-commentary.jpg);
+}
+
+textarea:invalid {
+	background-color: red;
+	opacity: 0.6;
+}
+
+/*	##	HEADER	##	*/
+header {
+	margin-bottom: 100px;
+	@include media-max("phone") {
+		margin-bottom: 0;
+	}
+}
+
+.main-nav {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.header-img {
+	top: -10px;
+	@include media-max("phone") {
+		display: none;
+	}
+}
+
+.header-img-2 {
+	@include media-max("phone") {
+		display: none;
+	}
+}
+
+.title {
+	@include media-max("tablet") {
+		font-size: 3em;
+	}
+	@include media-max("phone") {
+		display: none;
+	}
+}
+
+.nav-h3 {
+	@include media-max("tablet-lg") {
+		font-size: 3em;
+		width: max-content;
+	} @include media-between("tablet", "tablet-lg") {
+		margin-left: 20px;
+	}
+	@include media-max("phone") {
+		margin-left: -140px;
+	}
+}
+
+/*	##	MAIN	##	*/
+textarea {
+	background: rgb(255,255,255);
+	background: linear-gradient(0deg, rgba(255,255,255,0.5) 0%, rgba(251,251,251,0.5) 100%);  
+	border-color: orangered;
+	box-shadow: 60px -16px orangered;
+	border-radius: 10px;
+	color: black;
+	font-weight: 800;
+	font-family: fantasy;
+	padding: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+/*	##	FOOTER	##	*/

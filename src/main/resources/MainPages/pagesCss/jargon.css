@@ -1,0 +1,154 @@
+/*####################        jargon.html         ####################*/
+/*	##	MEDIA QUERIES	##	*/
+/* from... */
+/* to... */
+/* from... to... */
+/*	Variable's color	*/
+/*	for the whole page	*/
+body {
+  background-image: url(../../img/img_pages/bg-jargon.jpg);
+}
+
+/*	##	HEADER	##	*/
+.jargon {
+  text-align: center;
+}
+
+.jargon-nav {
+  margin-top: 30px;
+  padding: 30px;
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .jargon-nav {
+    margin-top: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .jargon-nav {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.header-img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .header-img {
+    visibility: hidden;
+  }
+}
+
+.header-img-2 {
+  visibility: hidden;
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .header-img-2 {
+    visibility: visible;
+    position: absolute;
+    top: -30px;
+    right: 15px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .header-img-2 {
+    visibility: collapse;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .header-div-right {
+    margin-left: 25px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .title {
+    visibility: hidden;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .header-title {
+    font-size: 2.7em;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .header-nav {
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .nav-h3 {
+    position: absolute;
+    width: 275px;
+    font-size: 3em;
+    left: -160px;
+    top: -35px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .a-menu {
+    font-size: 0.8em;
+    text-align: center;
+  }
+}
+
+/*	##	MAIN	##	*/
+.space {
+  margin-bottom: 20px;
+}
+
+.jargon-img {
+  width: 200px;
+  float: right;
+  margin-right: 200px;
+}
+
+dt {
+  font-size: 1.3rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  dt {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  dt {
+    font-size: 0.8em;
+  }
+}
+
+dd {
+  font-size: 1.1rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  dd {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  dd {
+    font-size: 0.8em;
+  }
+}
+
+/*	##	FOOTER	##	*/
+/*# sourceMappingURL=jargon.css.map */

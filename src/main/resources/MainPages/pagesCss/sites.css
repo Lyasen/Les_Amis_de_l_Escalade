@@ -1,0 +1,241 @@
+/*####################        sites.html         ####################*/
+/*	##	MEDIA QUERIES	##	*/
+/* from... */
+/* to... */
+/* from... to... */
+/*	Variable's color	*/
+/*	for the whole page	*/
+body {
+  background-image: url(../../img/img_pages/bg-sites.jpg);
+}
+
+/*	##	HEADER	##	*/
+h4 {
+  font-size: 2rem;
+}
+
+.sites-nav {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.sites-navlink {
+  color: black;
+  font-family: 'Engagement', cursive;
+}
+
+.sites-navlink:hover {
+  text-decoration: none;
+  color: orangered;
+}
+
+@media screen and (max-width: 1199px) {
+  .title {
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .title:after {
+    content: "Les Sites des Amis";
+    text-indent: 0;
+    line-height: initial;
+    display: block;
+  }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .title:after {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .title:after {
+    font-size: 0.6em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .title {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+}
+
+/*	Responsive's modification for the nav-bar	*/
+@media screen and (max-width: 1199px) {
+  .france {
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .france:after {
+    content: "France";
+    text-indent: 0;
+    font-size: inherit;
+    line-height: initial;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .france {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .europe {
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .europe:after {
+    content: "Europe";
+    text-indent: 0;
+    font-size: inherit;
+    line-height: initial;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .europe {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .monde {
+    text-indent: -9999px;
+    line-height: 0;
+  }
+  .monde:after {
+    content: "Monde";
+    text-indent: 0;
+    font-size: inherit;
+    line-height: initial;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .monde {
+    display: none;
+  }
+}
+
+/*_______________________________________*/
+@media screen and (max-width: 767px) {
+  .mountain-img {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .header-title {
+    margin-right: 70px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .header-title {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 30px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .a-menu {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .a-menu {
+    font-size: 0.7em;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .main-nav {
+    margin-top: -20px;
+  }
+}
+
+/*	##	MAIN	##	*/
+.col {
+  padding: 0 50px 0 50px;
+}
+
+.sites-h1 {
+  color: azure;
+  font-family: 'Engagement', cursive;
+  margin-bottom: 0;
+  padding: 0 10px 15px 20px;
+}
+
+@media screen and (max-width: 575px) {
+  .sites-h1 {
+    font-size: 1.8em;
+  }
+}
+
+h3 {
+  padding-left: 50px;
+}
+
+.shift {
+  padding-left: 20px;
+  color: antiquewhite;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .shift {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991px) {
+  .shift {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .shift {
+    font-size: 0.5em;
+    padding-left: 10px;
+  }
+}
+
+.shift:hover {
+  text-decoration: none;
+  color: orangered;
+}
+
+.icon-moutain {
+  padding: 0 0 15px 20px;
+}
+
+@media screen and (max-width: 575px) {
+  .icon-moutain {
+    padding-left: 0;
+  }
+}
+
+.icon-flag {
+  padding: 0 10px 10px 0;
+}
+
+@media screen and (max-width: 575px) {
+  .icon-flag {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/*	##	FOOTER	##	*/
+/*# sourceMappingURL=sites.css.map */
