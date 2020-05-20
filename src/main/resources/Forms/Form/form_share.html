@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../../MainPages/pagesCss/global.css">
-    <link rel="stylesheet" href="../FormCss/formPartage.css">
+    <link rel="stylesheet" href="../FormCss/formShare.css">
     <link rel="shortcut icon" href="../../img/img_pages/climb.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Engagement&display=swap" rel="stylesheet">
     <title>Partagez vos informations avec les Amis de l'escalade</title>
@@ -84,7 +84,7 @@
                 <hr>
 
                 <div class="form-group row">
-                    <label class="col-lg-6 col-form-label" for="escalade">Type d'escalade</label>
+                    <label class="col-lg-6 col-form-label">Type d'escalade</label>
                     <div class="col-lg-6">
                         <label class="escalade form-check">
                             <input type="checkbox" class="form-check-input" id="blocks">
@@ -111,33 +111,33 @@
                 <hr>
 
                 <div class="form-group row">
-                    <label class="col-lg-6 col-form-label" for="levels">Orientation</label>
+                    <label class="col-lg-6 col-form-label">Orientation</label>
                     <div class="col-lg-6">
                         <!--    I left the main guidelines so as not to unnecessarily lengthen the list -->
                         <label class="escalade form-check">
-                            <input type="checkbox" class="form-check-input" id="rookie">
+                            <input type="checkbox" class="form-check-input" id="all">
                             <span class="checkmark"></span>
-                            <label class="form-check-label" for="rookie">Toutes</label>
+                            <label class="form-check-label" for="all">Toutes</label>
                         </label>
                         <label class="escalade form-check">
-                            <input type="checkbox" class="form-check-input" id="amateur">
+                            <input type="checkbox" class="form-check-input" id="north">
                             <span class="checkmark"></span>
-                            <label class="form-check-label" for="amateur">Nord</label>
+                            <label class="form-check-label" for="north">Nord</label>
                         </label>
                         <label class="escalade form-check">
-                            <input type="checkbox" class="form-check-input" id="confirmed">
+                            <input type="checkbox" class="form-check-input" id="south">
                             <span class="checkmark"></span>
-                            <label class="form-check-label" for="confirmed">Sud</label>
+                            <label class="form-check-label" for="south">Sud</label>
                         </label>
                         <label class="escalade form-check">
-                            <input type="checkbox" class="form-check-input" id="pro">
+                            <input type="checkbox" class="form-check-input" id="east">
                             <span class="checkmark"></span>
-                            <label class="form-check-label" for="pro">Est</label>
+                            <label class="form-check-label" for="east">Est</label>
                         </label>
                         <label class="escalade form-check">
-                            <input type="checkbox" class="form-check-input" id="pro">
+                            <input type="checkbox" class="form-check-input" id="west">
                             <span class="checkmark"></span>
-                            <label class="form-check-label" for="pro">Ouest</label>
+                            <label class="form-check-label" for="west">Ouest</label>
                         </label>
                     </div>
                 </div>
@@ -162,9 +162,9 @@
 
                 <div class="form-group row">
                     <!--    To simplify, i've only used european metrics    -->
-                    <label class="col-lg-12 col-form-label" for="difficulties">Difficultés des voies</label>
-                    <label class="col-lg-4 col-form-label" for="from">Cotation de</label>
-                    <select class="col-lg-1 form-control" name="from" id="from">
+                    <label class="col-lg-12 col-form-label">Difficultés des voies</label>
+                    <label class="col-lg-4 col-form-label" for="firstCotation">Cotation de</label>
+                    <select class="col-lg-1 form-control" name="firstCotation" id="firstCotation">
                         <option>3</option>
                         <option>4</option>
                         <option>5</option>
@@ -176,16 +176,16 @@
                         <option>11</option>
                         <option>12</option>
                     </select>
-                    <label class="offset-1 col-lg-4 col-form-label" for="to">Lettre de cotation</label>
-                    <select class="col-lg-2 form-control" name="to" id="to">
+                    <label class="offset-1 col-lg-4 col-form-label" for="option">Lettre de cotation</label>
+                    <select class="col-lg-2 form-control" name="option" id="option">
                         <option>a</option>
                         <option>b</option>
                         <option>c</option>
                     </select>
                 </div>
                 <div class="form-group row">
-                    <label class="col-lg-4 col-form-label" for="from">Jusqu'à la cotation</label>
-                    <select class="col-lg-1 form-control" name="from" id="from">
+                    <label class="col-lg-4 col-form-label" for="finalCotation">Jusqu'à la cotation</label>
+                    <select class="col-lg-1 form-control" name="finalCotation" id="finalCotation">
                         <option>3</option>
                         <option>4</option>
                         <option>5</option>
@@ -197,8 +197,8 @@
                         <option>11</option>
                         <option>12</option>
                     </select>
-                    <label class="offset-1 col-lg-4 col-form-label" for="to">Lettre de cotation</label>
-                    <select class="col-lg-2 form-control" name="to" id="to">
+                    <label class="offset-1 col-lg-4 col-form-label" for="finalOption">Lettre de cotation</label>
+                    <select class="col-lg-2 form-control" name="finalOption" id="finalOption">
                         <option>a</option>
                         <option>b</option>
                         <option>c</option>
@@ -207,7 +207,7 @@
                 <hr>
 
                 <div class="form-group row">
-                    <label class="col-lg-6 col-form-label" for="levels">Niveau(x) des sites</label>
+                    <label class="col-lg-6 col-form-label">Niveau(x) des sites</label>
                     <div class="col-lg-6">
                         <label class="escalade form-check">
                             <input type="checkbox" class="form-check-input" id="rookie">
@@ -252,15 +252,16 @@
                         <div class="btn-wrapper">
                             <button type="button" class="btn">Annulez</button>
                         </div>
-                        <canvas id="canvas"></canvas>
+                        <canvas></canvas>
                     </div>
                     <div class="offset-4 col-2">
                         <div class="btn-wrapper">
                             <button type="button" class="btn">Envoyez</button>
                         </div>
-                        <canvas id="canvas"></canvas>
+                        <canvas></canvas>
                     </div>
                 </div>
+            </form>
         </section>
     </main>
 
