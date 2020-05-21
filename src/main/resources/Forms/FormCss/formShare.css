@@ -244,5 +244,17 @@ main .nav-h3 {
   }
 }
 
+/*	Download files	*/
+.share-img {
+  font-size: 0.8em;
+}
+
+.download {
+  padding: 20px;
+  background-color: orangered;
+  color: azure;
+  border-radius: 15px;
+}
+
 /*	##	FOOTER	##	*/
-/*# sourceMappingURL=formPartage.css.map */
+/*# sourceMappingURL=formShare.css.map */
