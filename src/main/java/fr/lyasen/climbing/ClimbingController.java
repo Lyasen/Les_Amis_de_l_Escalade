@@ -8,6 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class ClimbingController {
     @GetMapping("/climbing")
     public ModelAndView getEscalade() {
-
+        ModelAndView mav = new ModelAndView("MainPages/pagesHtml/main.html");
+        return mav;
     }
 }
