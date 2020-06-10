@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../../static/Scss/pagesCss/global.css">
-    <link rel="stylesheet" href="../../../../static/Scss/sitesCss/globalSites.css">
-    <link rel="stylesheet" href="../../../../static/Scss/sitesCss/france/buoux.css">
-    <link rel="shortcut icon" href="../../../../static/img/img_pages/climb.png" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/Scss/pagesCss/global.css}">
+    <link rel="stylesheet" th:href="@{/Scss/sitesCss/globalSites.css}">
+    <link rel="stylesheet" th:href="@{/Scss/sitesCss/france/buoux.css}">
+    <link rel="shortcut icon" th:href="@{/img/img_pages/climb.png}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Engagement&display=swap" rel="stylesheet">
     <title>Buoux - Lubéron</title>
     <meta name="description"
@@ -19,7 +19,7 @@
     <header id="buoux">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <!--    Logo    -->
-            <img src="../../../../static/img/img_pages/mountaintop.png" alt="Logo">
+            <img th:src="@{/img/img_pages/mountaintop.png}" alt="Logo">
 
             <!--    Bouton  -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="responsive">
@@ -31,16 +31,16 @@
             <div class="collapse navbar-collapse" id="responsive">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="../../../MainPages/pagesHtml/main.html" class="nav-link active">Escalader jusqu'à l'accueil</a>
+                        <a th:href="@{/MainPages/pagesHtml/main.html}" class="nav-link active">Escalader jusqu'à l'accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../../../MainPages/pagesHtml/sites.html" class="nav-link">Découvrez les Sites</a>
+                        <a th:href="@{/MainPages/pagesHtml/sites.html}" class="nav-link">Découvrez les Sites</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../../../MainPages/pagesHtml/topos.html" class="nav-link">Réservez votre topo</a>
+                        <a th:href="@{/MainPages/pagesHtml/topos.html}" class="nav-link">Réservez votre topo</a>
                     </li>
                     <li class="nav-item">
-                        <a href="../../../MainPages/pagesHtml/jargon.html" class="nav-link">Le jargon du grimpeur</a>
+                        <a th:href="@{/MainPages/pagesHtml/jargon.html}" class="nav-link">Le jargon du grimpeur</a>
                     </li>
                 </ul>
             </div>
@@ -54,37 +54,37 @@
                     <ul>
                         <li class="li">
                             <span>
-                                <img class="icon-description" src="../../../../static/img/img_sites/rochers.png" alt="Rochers">
+                                <img class="icon-description" th:src="@{/img/img_sites/rochers.png}" alt="Rochers">
                             </span>
                             <span>Type</span><br><span>Falaises</span>
                         </li>
                         <li class="li">
                             <span>
-                                <img class="icon-description" src="../../../../static/img/img_sites/hauteur.png" alt="hauteur">
+                                <img class="icon-description" th:src="@{/img/img_sites/hauteur.png}" alt="hauteur">
                             </span>
                             <span>Hauteur maximale des voies</span><br><span>70 mètres</span>
                         </li>
                         <li class="li">
                             <span>
-                                <img class="icon-description" src="../../../../static/img/img_sites/hauteur_voies.png" alt="Hauteur des voies">
+                                <img class="icon-description" th:src="@{/img/img_sites/hauteur_voies.png}" alt="Hauteur des voies">
                             </span>
                             <span>Altitude maximale au pied des voies</span><br><span>1 124 mètres</span>
                         </li>
                         <li class="li">
                             <span>
-                                <img class="icon-description" src="../../../../static/img/img_sites/orientation.png" alt="Orientaiton">
+                                <img class="icon-description" th:src="@{/img/img_sites/orientation.png}" alt="Orientaiton">
                             </span>
                             <span>Orientation</span><br><span>Ouest -  Sud -  Est</span>
                         </li>
                         <li class="li">
                             <span>
-                                <img class="icon-description" src="../../../../static/img/img_sites/voies.png" alt="Voies">
+                                <img class="icon-description" th:src="@{/img/img_sites/voies.png}" alt="Voies">
                             </span>
                             <span>Nombre de voies</span><br><span>Plus de 500 voies</span>
                         </li>
                         <li class="li">
                             <span>
-                                <img class="icon-description" src="../../../../static/img/img_sites/cotation.png" alt="Cotation">
+                                <img class="icon-description" th:src="@{/img/img_sites/cotation.png}" alt="Cotation">
                             </span>
                             <span>Cotations</span><br><span>Du 4b au 8c</span>
                         </li>
@@ -110,19 +110,19 @@
                     <ul>
                         <li class="li">
                             <span>
-                                <img src="../../../../static/img/img_sites/restrictions.png" alt="Restrictions" class="icon-description">
+                                <img th:src="@{/img/img_sites/restrictions.png}" alt="Restrictions" class="icon-description">
                             </span>
                             <span>Restrictions possibles</span><br><span>Des restrictions d'accès sont possibles entre le 1er juillet et le 15 septembre.</span>
                         </li>
                         <li class="li">
                             <span>
-                                <img src="../../../../static/img/img_sites/commune.png" alt="Commune" class="icon-description">
+                                <img th:src="@{/img/img_sites/commune.png}" alt="Commune" class="icon-description">
                             </span>
                             <span>Commune la plus proche du site</span><br><span>Buoux, 84480, France</span>
                         </li>
                         <li class="li">
                             <span>
-                                <img src="../../../../static/img/img_sites/niveau.png" alt="niveau du site" class="icon-description">
+                                <img th:src="@{/img/img_sites/niveau.png}" alt="niveau du site" class="icon-description">
                             </span>
                             <span>A partir de quel niveau peut-on escalader</span><br><span>Débutant</span>
                         </li>
@@ -168,17 +168,17 @@
                         <div class="footer-icon collapse navbar-collapse justify-content-end">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link"><img src="../../../../static/img/img_pages/facebook.png" alt="facebook"
+                                    <a href="#" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
                                             title="Facebook" width="32" height="32"></a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link"><img src="../../../../static/img/img_pages/twitter.png" alt="twitter"
+                                    <a href="#" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
                                             title="Twitter" width="32" height="32"></a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link"><img src="../../../../static/img/img_pages/verti-call.png" alt="verti-call"
+                                    <a href="#" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
                                             title="Verti-Call" width="32" height="32"></a>
                                 </li>
                             </ul>

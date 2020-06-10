@@ -90,15 +90,12 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr th:each="topo:${topos}">
-                                    <td data-label="Officiel" class="estamp"><img
-                                            th:src="@{/img/img_pages/estamp-32.png}" alt="medal"></td>
+                                <tr th:if="${topos}" th:each="topo:${topos}">
+                                    <td data-label="Officiel" class="estamp"><img th:src="@{/img/img_pages/estamp-32.png}" alt="medal"></td>
                                     <td data-label="Topo" class="topo" th:text="${topo.title}"></td>
-                                    <td data-label="Description" class="description">Cette colline possède une falaise
-                                        en son endroit de 30 mètres de haut et blabla et blablabla
-                                    </td>
-                                    <td data-label="Lieu" class="place">Dijon - Côte-D'Or - Bourgogne</td>
-                                    <td data-label="Date" class="date">02/05/2020</td>
+                                    <td data-label="Description" class="description" th:text="${topo.description}"></td>
+                                    <td data-label="Lieu" class="place" th:text="${topo.location}"></td>
+                                    <td data-label="Date" class="date" th:text="${topo.publishDate}"></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -118,16 +115,12 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td data-label="Officiel" class="estamp"><img
-                                                th:src="@{/img/img_pages/estamp-32.png}" alt="medal" hidden></td>
-                                        <td data-label="Topo" class="topo">Die schöne colline</td>
-                                        <td data-label="Description" class="description">Dieser Hügel in Form eines
-                                            Arschlochs hat an seiner Stelle eine 30 Meter hohe Klippe und Blabla und
-                                            Blablabla
-                                        </td>
-                                        <td data-label="Lieu" class="place">Frankfurt - UnteSchlasse - Allemagne</td>
-                                        <td data-label="Date">18/04/2020</td>
+                                    <tr th:unless="${topos}" th:each="topo:${topos}" >
+                                        <td data-label="Officiel" class="estamp"><img th:src="@{/img/img_pages/estamp-32.png}" alt="medal" hidden></td>
+                                        <td data-label="Topo" class="topo" th:text="${topo.title}"></td>
+                                        <td data-label="Description" class="description" th:text="${topo.description}"></td>
+                                        <td data-label="Lieu" class="place" th:text="${topo.location}"></td>
+                                        <td data-label="Date" th:text="${topo.publishDate}"></td>
                                     </tr>
                                     </tbody>
                                 </table>

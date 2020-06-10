@@ -1,7 +1,5 @@
 package fr.lyasen.climbing.model;
 
-import java.time.LocalDate;
-
 public class Topo {
     private boolean inFrance;
     private boolean official;
@@ -9,7 +7,17 @@ public class Topo {
     private String description;
     private String location;
     private String country;
-    private LocalDate publishDate;
+    private String publishDate;
+
+    public Topo(boolean inFrance, boolean official, String title, String description, String location, String country, String publishDate) {
+        this.inFrance = inFrance;
+        this.official = official;
+        this.title = title;
+        this.description = description;
+        this.location = location;
+        this.country = country;
+        this.publishDate = publishDate;
+    }
 
     public boolean isInFrance() {
         return inFrance;
@@ -59,11 +67,11 @@ public class Topo {
         this.country = country;
     }
 
-    public LocalDate getPublishDate() {
+    public String getPublishDate() {
         return publishDate;
     }
 
-    public void setPublishDate(LocalDate publishDate) {
+    public void setPublishDate(String publishDate) {
         this.publishDate = publishDate;
     }
 }
