@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../../static/Scss/pagesCss/global.css">
-    <link rel="stylesheet" href="../../../../static/Scss/FormCss/formInscription.css">
-    <link rel="shortcut icon" href="../../../../static/img/img_pages/climb.png" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/Scss/pagesCss/global.css}">
+    <link rel="stylesheet" th:href="@{/Scss/FormCss/formInscription.css}">
+    <link rel="shortcut icon" th:href="@{/img/img_pages/climb.png}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Engagement&display=swap" rel="stylesheet">
     <title>Formulaire d'inscription des amis de l'escalade</title>
     <meta name="description" content="Inscrivez-vous à la communauté 'Les amis de l'escalade'!">
@@ -27,8 +27,8 @@
                         </div>
 
                         <div class="col-2">
-                            <img class="header-img" src="../../../../static/img/img_pages/form_inscription.png" alt="topo">
-                            <img class="header-img-2" src="../../../../static/img/img_pages/form_inscription-64.png" alt="topo">
+                            <img class="header-img" th:src="@{/img/img_pages/form_inscription.png}" alt="topo">
+                            <img class="header-img-2" th:src="@{/img/img_pages/form_inscription-64.png}" alt="topo">
                         </div>
 
                         <div class="col-5">
@@ -42,7 +42,7 @@
 
     <main>
         <section class="main-space row justify-content-center">
-            <form class="inscription-form-space col-6" action="#">
+            <form class="inscription-form-space col-6" action="#" method="post" th:action="@{/subscription}" th:object="${subscription}">
                 <div class="form-group row">
                     <label class="col-lg-3 col-md-4 col-form-label" for="lastname">Votre nom</label>
                     <div class="col-lg-9 col-md-12">
@@ -88,7 +88,7 @@
                 <div class="form-group row">
                     <label class="col-lg-4 col-md-7 col-form-label" for="password">Créez votre mot de passe</label>
                     <div class="col-lg-8 col-md-12">
-                        <input class="form-control" type="password" name="password" id="password" minlength="8" maxlength="30" 
+                        <input class="form-control" type="password" name="password" id="password" minlength="8" maxlength="30"
                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Doit contenir au moins un chiffre et une lettre majuscule et minuscule, et au moins 8 caractères ou plus" required>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                     </div>
                     <div class="offset-4 col-2">
                         <div class="btn-wrapper">
-                            <button type="button" class="btn">Envoyez</button>
+                            <button type="submit" class="btn">Envoyez</button>
                         </div>
                         <canvas></canvas>
                     </div>
@@ -141,17 +141,17 @@
                         <div class="footer-icon collapse navbar-collapse justify-content-end">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link"><img src="../../../../static/img/img_pages/facebook.png" alt="facebook"
+                                    <a href="#" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
                                             title="Facebook" width="32" height="32"></a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link"><img src="../../../../static/img/img_pages/twitter.png" alt="twitter"
+                                    <a href="#" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
                                             title="Twitter" width="32" height="32"></a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link"><img src="../../../../static/img/img_pages/verti-call.png" alt="verti-call"
+                                    <a href="#" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
                                             title="Verti-Call" width="32" height="32"></a>
                                 </li>
                             </ul>

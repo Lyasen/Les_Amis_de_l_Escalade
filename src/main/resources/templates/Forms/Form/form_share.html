@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../../../static/Scss/pagesCss/global.css">
-    <link rel="stylesheet" href="../../../../static/Scss/FormCss/formShare.css">
-    <link rel="shortcut icon" href="../../../../static/img/img_pages/climb.png" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{/Scss/pagesCss/global.css}">
+    <link rel="stylesheet" th:href="@{/Scss/FormCss/formShare.css}">
+    <link rel="shortcut icon" th:href="@{/img/img_pages/climb.png}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Engagement&display=swap" rel="stylesheet">
     <title>Partagez vos informations avec les Amis de l'escalade</title>
     <meta name="description" content="Vous connaissez des endroits particuliers sur les sites présentés,partagez vos informations avec la communauté des Amis de l'escalade !">
@@ -27,8 +27,8 @@
                     </div>
 
                     <div class="img col-lg-2">
-                        <img class="header-img" src="../../../../static/img/img_pages/form_inscription.png" alt="topo">
-                        <img class="header-img-2" src="../../../../static/img/img_pages/form_inscription-64.png" alt="topo">
+                        <img class="header-img" th:src="@{/img/img_pages/form_inscription.png}" alt="topo">
+                        <img class="header-img-2" th:src="@{/img/img_pages/form_inscription-64.png}" alt="topo">
                     </div>
 
                     <div class="col-lg-5">
@@ -157,69 +157,23 @@
             <hr>
 
             <div class="form-group row">
-                <!--    To simplify, i've only used european metrics    -->
-                <label class="col-lg-12 col-form-label">Difficultés des voies</label>
-                <label class="col-lg-4 col-form-label" for="firstCotation">Cotation de</label>
-                <select class="col-lg-1 form-control" name="firstCotation" id="firstCotation">
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                </select>
-                <label class="offset-1 col-lg-4 col-form-label" for="option">Lettre de cotation</label>
-                <select class="col-lg-2 form-control" name="option" id="option">
-                    <option>a</option>
-                    <option>b</option>
-                    <option>c</option>
-                </select>
-            </div>
-            <div class="form-group row">
-                <label class="col-lg-4 col-form-label" for="finalCotation">Jusqu'à la cotation</label>
-                <select class="col-lg-1 form-control" name="finalCotation" id="finalCotation">
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                    <option>11</option>
-                    <option>12</option>
-                </select>
-                <label class="offset-1 col-lg-4 col-form-label" for="finalOption">Lettre de cotation</label>
-                <select class="col-lg-2 form-control" name="finalOption" id="finalOption">
-                    <option>a</option>
-                    <option>b</option>
-                    <option>c</option>
-                </select>
-            </div>
-            <hr>
-
-            <div class="form-group row">
                 <label class="col-lg-6 col-form-label">Niveau(x) des sites</label>
                 <div class="col-lg-6">
                     <label class="form-check">
-                        <input type="radio" class="form-check-input" id="rookie" name="level" checked>
+                        <input type="checkbox" class="form-check-input" id="rookie" name="level">
                         <label class="form-check-label" for="rookie">Débutant (du 3a au 5c)</label>
                     </label>
                     <label class="form-check">
-                        <input type="radio" class="form-check-input" id="amateur" name="level">
+                        <input type="checkbox" class="form-check-input" id="amateur" name="level">
                         <label class="form-check-label" for="amateur">Amateur (du 6a au 6c)</label>
                     </label>
                     <label class="form-check">
-                        <input type="radio" class="form-check-input" id="confirmed" name="level">
+                        <input type="checkbox" class="form-check-input" id="confirmed" name="level">
                         <label class="form-check-label" for="confirmed">Confirmé (du 7a au 7c)</label>
                     </label>
                     <label class="form-check">
-                        <input type="radio" class="form-check-input" id="pro" name="level">
-                        <label class="form-check-label" for="pro">Confirmé (à partir du 8a)</label>
+                        <input type="checkbox" class="form-check-input" id="pro" name="level">
+                        <label class="form-check-label" for="pro">Expert (à partir du 8a)</label>
                     </label>
                 </div>
             </div>
@@ -291,17 +245,17 @@
                     <div class="footer-icon collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="#" class="nav-link"><img src="../../../../static/img/img_pages/facebook.png" alt="facebook"
+                                <a href="#" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
                                                                   title="Facebook" width="32" height="32"></a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link"><img src="../../../../static/img/img_pages/twitter.png" alt="twitter"
+                                <a href="#" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
                                                                   title="Twitter" width="32" height="32"></a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link"><img src="../../../../static/img/img_pages/verti-call.png" alt="verti-call"
+                                <a href="#" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
                                                                   title="Verti-Call" width="32" height="32"></a>
                             </li>
                         </ul>

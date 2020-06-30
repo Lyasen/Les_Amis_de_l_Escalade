@@ -25,10 +25,11 @@ public class TopoService {
 
         List<Topo> topos = new ArrayList<>();
         topos.add(new Topo(true, false, "La belle Colline", "Colline abrupte pour grimpeurs acharnés", "Montpellier",
-                "France", formattedDateTime));
+                "France", formattedDateTime, "David Vincent"));
 
         topos.add(new Topo(false, true, "Tower of the Death",
-                "A strange cliff with a lot of snakes and condors around you to eat your eyes", "Melbourne", "Australie", formattedDateTime));
+                "A strange cliff with a lot of snakes and condors around you to eat your eyes", "Melbourne", "Australie",
+                formattedDateTime, "David Vincent"));
 
         return topos;
     }

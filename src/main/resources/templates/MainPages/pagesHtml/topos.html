@@ -87,15 +87,17 @@
                                     <th>Description</th>
                                     <th>Lieu</th>
                                     <th>Parution</th>
+                                    <th>Auteur</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr th:if="${topos}" th:each="topo:${topos}">
+                                <tr th:each="topo:${topos}">
                                     <td data-label="Officiel" class="estamp"><img th:src="@{/img/img_pages/estamp-32.png}" alt="medal"></td>
                                     <td data-label="Topo" class="topo" th:text="${topo.title}"></td>
                                     <td data-label="Description" class="description" th:text="${topo.description}"></td>
                                     <td data-label="Lieu" class="place" th:text="${topo.location}"></td>
                                     <td data-label="Date" class="date" th:text="${topo.publishDate}"></td>
+                                    <td data-label="Auteur" class="author" th:text="${topo.author}"></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -112,15 +114,17 @@
                                         <th>Description</th>
                                         <th>Lieu</th>
                                         <th>Parution</th>
+                                        <th>Auteur</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr th:unless="${topos}" th:each="topo:${topos}" >
+                                    <tr th:each="topo:${topos}" >
                                         <td data-label="Officiel" class="estamp"><img th:src="@{/img/img_pages/estamp-32.png}" alt="medal" hidden></td>
                                         <td data-label="Topo" class="topo" th:text="${topo.title}"></td>
                                         <td data-label="Description" class="description" th:text="${topo.description}"></td>
                                         <td data-label="Lieu" class="place" th:text="${topo.location}"></td>
                                         <td data-label="Date" th:text="${topo.publishDate}"></td>
+                                        <td data-label="Auteur" class="author" th:text="${topo.author}"></td>
                                     </tr>
                                     </tbody>
                                 </table>
