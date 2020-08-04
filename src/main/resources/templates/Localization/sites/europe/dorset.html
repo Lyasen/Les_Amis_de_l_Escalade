@@ -7,16 +7,16 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/Scss/pagesCss/global.css}">
     <link rel="stylesheet" th:href="@{/Scss/sitesCss/globalSites.css}">
-    <link rel="stylesheet" th:href="@{/Scss/sitesCss/world/capitan.css}">
+    <link rel="stylesheet" th:href="@{/Scss/sitesCss/europe/dorset.css}">
     <link rel="shortcut icon" th:href="@{/img/img_pages/climb.png}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Engagement&display=swap" rel="stylesheet">
-    <title>El Capitan</title>
+    <title>Dorset</title>
     <meta name="description"
         content="Tous les sites répertoriés par les amis de l'escalade, pour les amateurs et les professionnels, pour les locaux et les nomades">
 </head>
 
 <body>
-    <header id="capitan">
+    <header id="dorset">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <!--    Logo    -->
             <img th:src="@{/img/img_pages/mountaintop.png}" alt="Logo">
@@ -31,16 +31,16 @@
             <div class="collapse navbar-collapse" id="responsive">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a th:href="@{/MainPages/pagesHtml/main.html}" class="nav-link active">Escalader jusqu'à l'accueil</a>
+                        <a th:href="@{main}" class="nav-link active">Escalader jusqu'à l'accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a th:href="@{/MainPages/pagesHtml/sites.html}" class="nav-link">Découvrez les Sites</a>
+                        <a th:href="@{sites}" class="nav-link">Découvrez les Sites</a>
                     </li>
                     <li class="nav-item">
-                        <a th:href="@{/MainPages/pagesHtml/topos.html}" class="nav-link">Réservez votre topo</a>
+                        <a th:href="@{topo}" class="nav-link">Réservez votre topo</a>
                     </li>
                     <li class="nav-item">
-                        <a th:href="@{/MainPages/pagesHtml/jargon.html}" class="nav-link">Le jargon du grimpeur</a>
+                        <a th:href="@{jargon}" class="nav-link">Le jargon du grimpeur</a>
                     </li>
                 </ul>
             </div>
@@ -56,71 +56,62 @@
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/rochers.png}" alt="Rochers">
                             </span>
-                            <span>Type</span><br><span>Montagne</span>
+                            <span>Type</span><br><span>Falaises</span>
                         </li>
                         <li class="li">
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/hauteur.png}" alt="hauteur">
                             </span>
-                            <span>Hauteur maximales des voies</span><br><span>1 000 mètres</span>
+                            <span>Hauteur maximale des voies</span><br><span>30 mètres</span>
                         </li>
                         <li class="li">
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/hauteur_voies.png}" alt="Hauteur des voies">
                             </span>
-                            <span>Altitude maximale au pied des voies</span><br><span>2 307 mètres</span>
+                            <span>Altitude maximale au pied des voies</span><br><span>277 mètres</span>
                         </li>
                         <li class="li">
                             <span>
-                                <img class="icon-description" th:src="@{/img/img_sites/orientation.png}" alt="Orientaiton">
+                                <img class="icon-description" th:src="@{/img/img_sites/orientation.png}" alt="Orientation">
                             </span>
-                            <span>Orientation</span><br><span>Toutes</span>
+                            <span>Orientation</span><br><span>Ouest - Est</span>
                         </li>
                         <li class="li">
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/voies.png}" alt="Voies">
                             </span>
-                            <span>Nombre de voies</span><br><span>Plus de 1000 voies</span>
+                            <span>Nombre de voies</span><br><span>Plus de 500 voies</span>
                         </li>
                         <li class="li">
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/cotation.png}" alt="Cotation">
                             </span>
-                            <span>Cotations</span><br><span>Du 5b au 9a</span><br><span>Débutant à expert</span>
+                            <span>Cotations</span><br><span>Du 3a au 8b</span><br><span>Débutant à expert</span>
                         </li>
                     </ul>
                 </div>
                 <div class="col-6">
-                    <h2><a class="color-h2" href="https://earth.google.com/web/@37.7340631,-119.6375199,2304.61755558a,814.62782201d,35y,0h,45t,0r/data=Ck0aSxJFCiUweDgwOTZlZGQ4MjRkYjhmYmQ6MHg1N2FkY2M3NjJmYjNkNDAzGaJCdXPx3UJAIRJCrKPP6F3AKgpFbCBDYXBpdGFuGAIgASgC" target="_blank" title="Admirez sur Google Earth">El Capitan - Yosemite - Etats-Unis</a></h2>
+                    <h2><a class="color-h2" href="https://earth.google.com/web/@50.7969303,-2.3216289,132.24254798a,117550.07080243d,35y,0h,0t,0r/data=CkkaRxJBCiUweDQ4NmQ4MGFhZWRhYmYxNzc6MHgzM2ExZjQ4MWJhZGE2ZDVmGSB4fHvXX0lAIftfCf99wQLAKgZEb3JzZXQYAiAB" target="_blank" title="Admirez sur Google Earth">Dorset - Angleterre</a></h2>
                     <p>
-                        Mecque californienne de l’escalade, le Yosemite est sans doute le site d’escalade le
-                        plus
-                        réputé au monde, mais malgré son intense fréquentation, la magie opère toujours. Ses
-                        big
-                        walls imposants dominent la Vallée, témoins silencieux des plus incroyables
-                        histoires de
-                        grimpe.
+                        La côte du Dorset borde le sud de l’Angleterre donnant sur la Manche. Des champs
+                        verdoyants
+                        et ondulants sont interrompus par des falaises côtières grandioses ayant donné
+                        naissance
+                        à
+                        des secteurs d’escalade incroyablement divers.
                     </p>
                     <p>
-                        Difficile de ne choisir qu’un seul site dans le Yosemite, le Half Dome et El Capitan
-                        se
-                        disputent la vedette, et plein de sites secondaires méritent eux aussi le détour.
-                        Mais
-                        El
-                        Cap reste un mythe à lui tout seul, et bon nombre de ses voies hantent les rêves des
-                        grimpeurs du monde entier.
-                    </p>
-                    <p>
-                        The Nose est sans doute la plus célèbre, tandis que le solo totalement fou d’Alex
-                        Honnold a
-                        braqué tous les projecteurs sur Freerider (7c+) en juin dernier. Ajoutons aussi
-                        l’incroyablement difficile Dawn Wall, avec 32 longueurs dont deux 9a, libéré l’an
-                        dernier
-                        par Adam Ondra ! Il existe heureusement sur El Cap des voies plus accessibles
-                        techniquement
-                        (Face Ouest, East Buttress par exemple), qui permettent aux passionnés de
-                        s’imprégner de
-                        l’ambiance magique d’El Cap.
+                        Lulworth Cove offre des opportunités uniques de psicobloc, tandis que les parois
+                        surplombant
+                        la mer regorgent de voies sportives ardues. La région comprend également un spot de
+                        bloc
+                        original dénommé Agglestone Rock (ou “l’Enclume du Diable”) à Studland. Il s’agit
+                        d’un
+                        rocher unique et atypique dans le secteur de Black Heath. Selon la légende, ce bloc
+                        de
+                        grès
+                        de 400 tonnes aurait été lancé par le Diable depuis les Needles de l’île de Wight,
+                        “aiguilles” de calcaire jaillissant de la mer.
                     </p>
 
                     <ul>
@@ -128,13 +119,13 @@
                             <span>
                                 <img th:src="@{/img/img_sites/restrictions.png}" alt="Restrictions" class="icon-description">
                             </span>
-                            <span>Restrictions possibles</span><br><span></span>
+                            <span>Restrictions possibles</span><br><span>Les systèmes de stationnement pour les résidents gèrent un stationnement équitable pour les résidents et les non-résidents. Ces zones sont marquées par des panneaux et des marquages ​​sur la route.</span>
                         </li>
                         <li class="li">
                             <span>
                                 <img th:src="@{/img/img_sites/commune.png}" alt="Commune" class="icon-description">
                             </span>
-                            <span>Commune la plus proche du site</span><br><span>El Capitan, Californie 95389, États-Unis</span>
+                            <span>Commune la plus proche du site</span><br><span>Dorset, Angleterre</span>
                         </li>
                     </ul>
                 </div>
@@ -144,7 +135,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="col-12"><a class="btn" href="#" role="button">Poster un commentaire</a></div>
+                    <div class="col-12"><a class="btn" th:href="@{commentary}" role="button">Poster un commentaire</a></div>
                 </div>
             </div>
             <div class="border border-dark rounded row">
@@ -178,17 +169,17 @@
                         <div class="footer-icon collapse navbar-collapse justify-content-end">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
+                                    <a href="https://fr-fr.facebook.com/" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
                                             title="Facebook" width="32" height="32"></a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
+                                    <a href="https://twitter.com/?lang=fr" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
                                             title="Twitter" width="32" height="32"></a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
+                                    <a href="https://www.verti-call.com/" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
                                             title="Verti-Call" width="32" height="32"></a>
                                 </li>
                             </ul>
@@ -210,12 +201,12 @@
 
                                 <li class="nav-item">
                                     <a href="https://climbingaway.fr/fr/" class="nav-weight nav-link"
-                                        title="Climbingaway: Waouh !  C'est haut ! J'ai le vertige !">Climbingaway</a>
+                                        title="Climbingaway: What this fucking climbing to look for !">Climbingaway</a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe"
-                                        class="nav-weight nav-link" title="Plastique à bulles ou Red Bull ?">Red Bull</a>
+                                        class="nav-weight nav-link" title="Drink a Red Bull, become a what you want">Red Bull</a>
                                 </li>
                             </ul>
                         </div>

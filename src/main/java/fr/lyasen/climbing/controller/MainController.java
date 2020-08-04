@@ -13,7 +13,6 @@ public class MainController {
 
     @GetMapping("/main")
     public ModelAndView main() {
-        ModelAndView model = new ModelAndView("MainPages/pagesHtml/main.html");
-        return model;
+        return new ModelAndView("MainPages/pagesHtml/main.html");
     }
 }

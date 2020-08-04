@@ -1,15 +1,15 @@
 package fr.lyasen.climbing.controller.forms;
 
-import fr.lyasen.climbing.service.forms.ShareService;
+import fr.lyasen.climbing.service.forms.ShareSiteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class ShareController {
+public class ShareSiteController {
     @Autowired
-    ShareService shareService;
+    ShareSiteService shareSiteService;
 
     @GetMapping("/share")
     public ModelAndView share() {

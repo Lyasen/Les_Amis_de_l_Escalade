@@ -1,4 +1,4 @@
 package fr.lyasen.climbing.model.forms;
 
-public class Form_share {
+public class Form_shareSite {
 }

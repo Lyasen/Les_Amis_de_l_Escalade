@@ -140,19 +140,13 @@
             <hr>
 
             <div class="form-group row">
-                <label class="col-lg-4 col-form-label" for="voies">Nombre de voies</label>
-                <select class="col-lg-8 form-control" name="voies" id="voies">
-                    <option>--Choisissez--</option>
-                    <option>Moins de 10 voies</option>
-                    <option>Entre 10 et 50 voies</option>
-                    <option>Entre 50 et 100 voies</option>
-                    <option>Plus de 100 voies</option>
-                    <option>Plus de 200 voies</option>
-                    <option>Plus de 300 voies</option>
-                    <option>Plus de 400 voies</option>
-                    <option>Plus de 500 voies</option>
-                    <option>Plus de 1000 voies</option>
-                </select>
+                <label class="col-lg-6 col-form-label">Nombre de voies</label>
+                <div class="col-lg-6">
+                    <label for="voiesmin">Minimum</label>
+                    <input class="form-control" type="number" name="voies" id="voiesmin" min="1" max="1000">
+                    <label for="voiesmax">Maximum</label>
+                    <input class="form-control" type="number" name="voies" id="voiesmax" min="2" max="2000">
+                </div>
             </div>
             <hr>
 

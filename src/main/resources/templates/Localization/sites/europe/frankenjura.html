@@ -7,16 +7,16 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/Scss/pagesCss/global.css}">
     <link rel="stylesheet" th:href="@{/Scss/sitesCss/globalSites.css}">
-    <link rel="stylesheet" th:href="@{/Scss/sitesCss/europe/siurana.css}">
+    <link rel="stylesheet" th:href="@{/Scss/sitesCss/europe/frankenjura.css}">
     <link rel="shortcut icon" th:href="@{/img/img_pages/climb.png}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Engagement&display=swap" rel="stylesheet">
-    <title>Siurana</title>
+    <title>Frankenjura</title>
     <meta name="description"
         content="Tous les sites répertoriés par les amis de l'escalade, pour les amateurs et les professionnels, pour les locaux et les nomades">
 </head>
 
 <body>
-    <header id="siurana">
+    <header id="frankenjura">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <!--    Logo    -->
             <img th:src="@{/img/img_pages/mountaintop.png}" alt="Logo">
@@ -31,16 +31,16 @@
             <div class="collapse navbar-collapse" id="responsive">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a th:href="@{/MainPages/pagesHtml/main.html}" class="nav-link active">Escalader jusqu'à l'accueil</a>
+                        <a th:href="@{main}" class="nav-link active">Escalader jusqu'à l'accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a th:href="@{/MainPages/pagesHtml/sites.html}" class="nav-link">Découvrez les Sites</a>
+                        <a th:href="@{sites}" class="nav-link">Découvrez les Sites</a>
                     </li>
                     <li class="nav-item">
-                        <a th:href="@{/MainPages/pagesHtml/topos.html}" class="nav-link">Réservez votre topo</a>
+                        <a th:href="@{topo}" class="nav-link">Réservez votre topo</a>
                     </li>
                     <li class="nav-item">
-                        <a th:href="@{/MainPages/pagesHtml/jargon.html}" class="nav-link">Le jargon du grimpeur</a>
+                        <a th:href="@{jargon}" class="nav-link">Le jargon du grimpeur</a>
                     </li>
                 </ul>
             </div>
@@ -62,13 +62,13 @@
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/hauteur.png}" alt="hauteur">
                             </span>
-                            <span>Hauteur maximale des voies</span><br><span>90 mètres</span>
+                            <span>Hauteur maximale des voies</span><br><span>30 mètres</span>
                         </li>
                         <li class="li">
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/hauteur_voies.png}" alt="Hauteur des voies">
                             </span>
-                            <span>Altitude maximale au pied des voies</span><br><span>750 mètres</span>
+                            <span>Altitude maximale au pied des voies</span><br><span>550 mètres</span>
                         </li>
                         <li class="li">
                             <span>
@@ -80,28 +80,30 @@
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/voies.png}" alt="Voies">
                             </span>
-                            <span>Nombre de voies</span><br><span>Plus de 1000 voies</span>
+                            <span>Nombre de voies</span><br><span>Entre 50 et 100 voies</span>
                         </li>
                         <li class="li">
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/cotation.png}" alt="Cotation">
                             </span>
-                            <span>Cotations</span><br><span>Du 4b au 9b</span><br><span>Débutant à expert</span>
+                            <span>Cotations</span><br><span>Du 4b au 8a</span><br><span>Débutant à expert</span>
                         </li>
                     </ul>
                 </div>
                 <div class="col-6">
-                    <h2><a class="color-h2" href="https://earth.google.com/web/@41.25805095,0.93232915,735.66462532a,770.61338203d,35y,0h,45t,0r/data=CkoaSBJCCiUweDEyYTE0YWMyOGM0OGRlZTc6MHhiNDMxNGUyMjcyMzI1ZmEzGfuT-NwJoURAIc50ZQbg1e0_KgdTaXVyYW5hGAIgASgC" target="_blank" title="Admirez sur Google Earth">Siurana - Espagne</a></h2>
+                    <h2><a class="color-h2" href="https://earth.google.com/web/@49.6345611,11.5319458,400.76179358a,655.37761608d,35y,0h,45t,0r/data=ClwaWhJUCiUweDQ3YTFjNDlhMTM2ZTYzNjU6MHg2MTNiZjQ0YmY0NGM0YzA1GSroUUw50UhAITZ9LDNbECdAKhlGcmFua2VuSnVyYSwgV2Vpc3NlbnN0ZWluGAIgAQ" target="_blank" title="Admirez sur Google Earth">Frankenjura - Allemagne</a></h2>
                     <p>
-                        Siruana se trouve en Catalogne, à l’ouest de Barcelone. Les falaises et ravins
-                        entourent
-                        le
-                        magnifique village médiéval du même nom.
+                        Unanimement considéré comme site majeur d’escalade en Allemagne, le Frankenjura est
+                        une
+                        région calcaire située dans le nord de la Bavière. Offrant des cotations de tous les
+                        niveaux, chacun y trouve son compte dans cette multitude de voies sportives.
                     </p>
                     <p>
-                        Proposant une multitude de voies classiques et régulièrement fréquenté par les
-                        meilleurs
-                        grimpeurs au monde, ce spot d’escalade vaut assurément le détour.
+                        L’environnement boisé est parsemé de falaises permettant la pratique de l’escalade
+                        dans
+                        diverses conditions. Il propose un bon ensemble de lignes classiques et modernes
+                        dont
+                        certaines nouvellement équipées chaque année.
                     </p>
 
                     <ul>
@@ -109,13 +111,13 @@
                             <span>
                                 <img th:src="@{/img/img_sites/restrictions.png}" alt="Restrictions" class="icon-description">
                             </span>
-                            <span>Restrictions possibles</span><br><span></span>
+                            <span>Restrictions possibles</span><br><span>Attention aux restrictions d'accès périodiques aux falaises.</span>
                         </li>
                         <li class="li">
                             <span>
                                 <img th:src="@{/img/img_sites/commune.png}" alt="Commune" class="icon-description">
                             </span>
-                            <span>Commune la plus proche du site</span><br><span>Siurana, Province de Tarragone, Espagne</span>
+                            <span>Commune la plus proche du site</span><br><span>Meinheim, Allemagne</span>
                         </li>
                     </ul>
                 </div>
@@ -125,7 +127,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="col-12"><a class="btn" href="#" role="button">Poster un commentaire</a></div>
+                    <div class="col-12"><a class="btn" th:href="@{commentary}" role="button">Poster un commentaire</a></div>
                 </div>
             </div>
             <div class="border border-dark rounded row">
@@ -159,17 +161,17 @@
                         <div class="footer-icon collapse navbar-collapse justify-content-end">
                             <ul class="navbar-nav">
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
+                                    <a href="https://fr-fr.facebook.com/" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
                                             title="Facebook" width="32" height="32"></a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
+                                    <a href="https://twitter.com/?lang=fr" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
                                             title="Twitter" width="32" height="32"></a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
+                                    <a href="https://www.verti-call.com/" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
                                             title="Verti-Call" width="32" height="32"></a>
                                 </li>
                             </ul>
@@ -191,12 +193,12 @@
 
                                 <li class="nav-item">
                                     <a href="https://climbingaway.fr/fr/" class="nav-weight nav-link"
-                                        title="Climbingaway: Si senior">Climbingaway</a>
+                                        title="Climbingaway: Was ist das ?">Climbingaway</a>
                                 </li>
 
                                 <li class="nav-item">
                                     <a href="https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe"
-                                        class="nav-weight nav-link" title="Boira la Redi Bulla !">Red Bull</a>
+                                        class="nav-weight nav-link" title="Ach ! Auf Red Bull !">Red Bull</a>
                                 </li>
                             </ul>
                         </div>
