@@ -1,18 +1,14 @@
 package fr.lyasen.climbing.model.forms;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="share_sites")
 public class Form_shareSite {
-    @id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
-    private GeoLocation location;
+    private String location;
     private int altitude, height;
     private enum climb_type {
         BLOCKS, CLIFFS, MOUNTAIN, HIGHMOUNTAIN
@@ -28,9 +24,9 @@ public class Form_shareSite {
     private byte[] image;
     private boolean isOfficial;
 
-    public Form_shareSite(String name, int altitude, int height, int numberOfLanes, String restrictions, String information, byte[] image, boolean isOfficial) {
+    public Form_shareSite(String name, String location, int altitude, int height, int numberOfLanes, String restrictions, String information, byte[] image, boolean isOfficial) {
         this.name = name;
-        location = new GeoLocation(latitude, longitude);
+        this.location = location;
         this.altitude = altitude;
         this.height = height;
         this.numberOfLanes = numberOfLanes;
@@ -52,11 +48,11 @@ public class Form_shareSite {
         this.name = name;
     }
 
-    public GeoLocation getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(GeoLocation location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 
