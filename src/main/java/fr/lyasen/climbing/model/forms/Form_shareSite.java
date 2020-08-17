@@ -1,43 +1,94 @@
 package fr.lyasen.climbing.model.forms;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name="share_sites")
+@Table(name = "share_site")
 public class Form_shareSite {
-    private int id;
+    @Id
+    @Column(name = "site_id", nullable = false, columnDefinition = "INT UNSIGNED AUTO_INCREMENT")
+    private int siteId;
+    @Column(name = "name", nullable = false, columnDefinition = "VARCHAR(32)")
     private String name;
+    @Column(name = "location", nullable = false, columnDefinition = "VARCHAR(32)")
     private String location;
-    private int altitude, height;
-    private enum climb_type {
-        BLOCKS, CLIFFS, MOUNTAIN, HIGHMOUNTAIN
+    @Column(name = "altitude", nullable = false, columnDefinition = "INT UNSIGNED")
+    private Integer altitude;
+    @Column(name = "height", nullable = false, columnDefinition = "INT UNSIGNED")
+    private Integer height;
+
+    private enum ClimbType {
+        BLOCKS , CLIFFS, MOUNTAIN, HIGHMOUNTAIN
     }
-    private enum orientation {
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "climb_type")
+    private ClimbType climbType;
+
+    private enum Orientation {
         ALL, NORTH, SOUTH, EAST, WEST
     }
-    private int numberOfLanes;
-    private enum siteLevel {
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "orientation")
+    private Orientation orientation;
+
+    @Column(name = "lanes_min", nullable = false, columnDefinition = "INT UNSIGNED")
+    private Integer lanesMin;
+    @Column(name = "lanes_max", nullable = false, columnDefinition = "INT UNSIGNED")
+    private Integer lanesMax;
+
+    private enum SiteLevel {
         ROOKIE, AMATEUR, EXPERIENCED, EXPERT
     }
-    private String restrictions, information;
-    private byte[] image;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "site_level")
+    private SiteLevel siteLevel;
+
+    @Column(name = "restrictions", nullable = true, columnDefinition = "TEXT")
+    private String restrictions;
+    @Column(name = "information", nullable = false, columnDefinition = "TEXT")
+    private String information;
+    @Column(name = "is_official", columnDefinition = "BOOLEAN DEFAULT FALSE")
     private boolean isOfficial;
 
-    public Form_shareSite(String name, String location, int altitude, int height, int numberOfLanes, String restrictions, String information, byte[] image, boolean isOfficial) {
+    public Form_shareSite() {}
+
+    public Form_shareSite(int siteId,
+                          String name,
+                          String location,
+                          int altitude,
+                          int height,
+                          ClimbType climbType,
+                          Orientation orientation,
+                          int lanesMin,
+                          int lanesMax,
+                          SiteLevel siteLevel,
+                          String restrictions,
+                          String information,
+                          boolean isOfficial) {
+        this.siteId = siteId;
         this.name = name;
         this.location = location;
         this.altitude = altitude;
         this.height = height;
-        this.numberOfLanes = numberOfLanes;
+        this.climbType = climbType;
+        this.orientation = orientation;
+        this.lanesMin = lanesMin;
+        this.lanesMax = lanesMax;
+        this.siteLevel = siteLevel;
         this.restrictions = restrictions;
         this.information = information;
-        this.image = image;
         this.isOfficial = isOfficial;
     }
 
-    public int getId() {
-        return id;
+    public int getSiteId() {
+        return siteId;
+    }
+
+    public void setSiteId(int siteId) {
+        this.siteId = siteId;
     }
 
     public String getName() {
@@ -56,28 +107,60 @@ public class Form_shareSite {
         this.location = location;
     }
 
-    public int getAltitude() {
+    public Integer getAltitude() {
         return altitude;
     }
 
-    public void setAltitude(int altitude) {
+    public void setAltitude(Integer altitude) {
         this.altitude = altitude;
     }
 
-    public int getHeight() {
+    public Integer getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(Integer height) {
         this.height = height;
     }
 
-    public int getNumberOfLanes() {
-        return numberOfLanes;
+    public ClimbType getClimbType() {
+        return climbType;
     }
 
-    public void setNumberOfLanes(int numberOfLanes) {
-        this.numberOfLanes = numberOfLanes;
+    public void setClimbType(ClimbType climbType) {
+        this.climbType = climbType;
+    }
+
+    public Orientation getOrientation() {
+        return orientation;
+    }
+
+    public void setOrientation(Orientation orientation) {
+        this.orientation = orientation;
+    }
+
+    public Integer getLanesMin() {
+        return lanesMin;
+    }
+
+    public void setLanesMin(Integer lanesMin) {
+        this.lanesMin = lanesMin;
+    }
+
+    public Integer getLanesMax() {
+        return lanesMax;
+    }
+
+    public void setLanesMax(Integer lanesMax) {
+        this.lanesMax = lanesMax;
+    }
+
+    public SiteLevel getSiteLevel() {
+        return siteLevel;
+    }
+
+    public void setSiteLevel(SiteLevel siteLevel) {
+        this.siteLevel = siteLevel;
     }
 
     public String getRestrictions() {
@@ -94,14 +177,6 @@ public class Form_shareSite {
 
     public void setInformation(String information) {
         this.information = information;
-    }
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
     }
 
     public boolean isOfficial() {

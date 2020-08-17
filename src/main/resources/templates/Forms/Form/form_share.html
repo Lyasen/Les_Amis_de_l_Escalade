@@ -50,11 +50,12 @@
     </div>
 
     <section class="row justify-content-center">
-        <form class="col-6" action="#">
+        <form class="col-6" th:action="@{/share}" method="post" th:object="${site}">
             <div class="form-group row">
                 <label class="col-lg-3 col-form-label" for="site">Nom du site</label>
                 <div class="col-lg-9">
-                    <input class="form-control" type="text" name="site" id="site" placeholder="Dolomites, Annot..." minlength="3" maxlength="20" required>
+                    <input class="form-control" type="text" name="site" id="site"
+                           placeholder="Dolomites, Annot..." minlength="3" maxlength="20" th:field="*{name}" required>
                 </div>
             </div>
             <hr>
@@ -62,7 +63,8 @@
             <div class="form-group row">
                 <label class="col-lg-4 col-form-label" for="village">Commune proche</label>
                 <div class="col-lg-8">
-                    <input class="form-control" type="text" name="village" id="village" placeholder="La commune la plus à proximité du site" minlength="2" maxlength="20" required>
+                    <input class="form-control" type="text" name="village" id="village"
+                           placeholder="La commune la plus à proximité du site" minlength="2" maxlength="20"  th:field="*{location}" required>
                 </div>
             </div>
             <hr>
@@ -70,7 +72,7 @@
             <div class="form-group row">
                 <label class="col-lg-6 col-form-label" for="altitude">Altitude maximale au pied des voies (en mètres)</label>
                 <div class="col-lg-6">
-                    <input class="form-control" type="number" name="altitude" id="altitude" min="0" max="2000">
+                    <input class="form-control" type="number" name="altitude" id="altitude" min="0" max="4000" th:field="*{altitude}">
                 </div>
             </div>
             <hr>
@@ -78,7 +80,7 @@
             <div class="form-group row">
                 <label class="col-lg-6 col-form-label" for="hauteur">Hauteur maximale des voies</label>
                 <div class="col-lg-6">
-                    <input class="form-control" type="number" name="hauteur" id="hauteur" min="0" max="1000">
+                    <input class="form-control" type="number" name="hauteur" id="hauteur" min="0" max="1000" th:field="*{height}">
                 </div>
             </div>
             <hr>
@@ -91,15 +93,15 @@
                         <label class="form-check-label" for="blocks">Blocs</label>
                     </label>
                     <label class="form-check">
-                        <input type="radio" class="form-check-input" id="cliff" value="cliff" name="climbingType">
+                        <input type="radio" class="form-check-input" id="cliff" value="cliff" name="climbingType" >
                         <label class="form-check-label" for="cliff">Falaises</label>
                     </label>
                     <label class="form-check">
-                        <input type="radio" class="form-check-input" id="mountain" value="mountain" name="climbingType">
+                        <input type="radio" class="form-check-input" id="mountain" value="mountain" name="climbingType" >
                         <label class="form-check-label" for="mountain">Montagne</label>
                     </label>
                     <label class="form-check">
-                        <input type="radio" class="form-check-input" id="high-mountain" value="high-mountain" name="climbingType">
+                        <input type="radio" class="form-check-input" id="high-mountain" value="high-mountain" name="climbingType" >
                         <label class="form-check-label" for="high-mountain">Haute-Montagne</label>
                     </label>
                 </div>
@@ -111,27 +113,22 @@
                 <div class="col-lg-6">
                     <!--    I left the main guidelines so as not to unnecessarily lengthen the list -->
                     <label class="escalade form-check">
-                        <input type="checkbox" class="form-check-input" id="all">
-                        <span class="checkmark"></span>
-                        <label class="form-check-label" for="all">Toutes</label>
-                    </label>
-                    <label class="escalade form-check">
-                        <input type="checkbox" class="form-check-input" id="north">
+                        <input type="checkbox" class="form-check-input" id="north" >
                         <span class="checkmark"></span>
                         <label class="form-check-label" for="north">Nord</label>
                     </label>
                     <label class="escalade form-check">
-                        <input type="checkbox" class="form-check-input" id="south">
+                        <input type="checkbox" class="form-check-input" id="south" >
                         <span class="checkmark"></span>
                         <label class="form-check-label" for="south">Sud</label>
                     </label>
                     <label class="escalade form-check">
-                        <input type="checkbox" class="form-check-input" id="east">
+                        <input type="checkbox" class="form-check-input" id="east" >
                         <span class="checkmark"></span>
                         <label class="form-check-label" for="east">Est</label>
                     </label>
                     <label class="escalade form-check">
-                        <input type="checkbox" class="form-check-input" id="west">
+                        <input type="checkbox" class="form-check-input" id="west" >
                         <span class="checkmark"></span>
                         <label class="form-check-label" for="west">Ouest</label>
                     </label>
@@ -142,10 +139,10 @@
             <div class="form-group row">
                 <label class="col-lg-6 col-form-label">Nombre de voies</label>
                 <div class="col-lg-6">
-                    <label for="voiesmin">Minimum</label>
-                    <input class="form-control" type="number" name="voies" id="voiesmin" min="1" max="1000">
-                    <label for="voiesmax">Maximum</label>
-                    <input class="form-control" type="number" name="voies" id="voiesmax" min="2" max="2000">
+                    <label for="voiesMin">Minimum</label>
+                    <input class="form-control" type="number" name="voies" id="voiesMin" min="1" max="1000" th:field="*{lanes_min}">
+                    <label for="voiesMax">Maximum</label>
+                    <input class="form-control" type="number" name="voies" id="voiesMax" min="2" max="1000" th:field="*{lanes_max}">
                 </div>
             </div>
             <hr>
@@ -154,19 +151,19 @@
                 <label class="col-lg-6 col-form-label">Niveau(x) des sites</label>
                 <div class="col-lg-6">
                     <label class="form-check">
-                        <input type="checkbox" class="form-check-input" id="rookie" name="level">
+                        <input type="checkbox" class="form-check-input" id="rookie" name="level" >
                         <label class="form-check-label" for="rookie">Débutant (du 3a au 5c)</label>
                     </label>
                     <label class="form-check">
-                        <input type="checkbox" class="form-check-input" id="amateur" name="level">
+                        <input type="checkbox" class="form-check-input" id="amateur" name="level" >
                         <label class="form-check-label" for="amateur">Amateur (du 6a au 6c)</label>
                     </label>
                     <label class="form-check">
-                        <input type="checkbox" class="form-check-input" id="confirmed" name="level">
+                        <input type="checkbox" class="form-check-input" id="confirmed" name="level" >
                         <label class="form-check-label" for="confirmed">Confirmé (du 7a au 7c)</label>
                     </label>
                     <label class="form-check">
-                        <input type="checkbox" class="form-check-input" id="pro" name="level">
+                        <input type="checkbox" class="form-check-input" id="pro" name="level" >
                         <label class="form-check-label" for="pro">Expert (à partir du 8a)</label>
                     </label>
                 </div>
@@ -175,39 +172,28 @@
 
             <div class="form-group row">
                 <label class="textarea" for="restrictions">Restrictions</label>
-                <textarea class="form-control" id="restrictions" rows="3" maxlength="1000"
+                <textarea class="form-control" id="restrictions" rows="3" maxlength="1000" th:field="*{restrictions}"
                           placeholder="Indiquez si des restrictions de quelques sortes sont applicables"></textarea>
             </div>
             <hr>
 
             <div class="form-group row">
                 <label class="textarea" for="infossup">Vos Informations croustillantes</label>
-                <textarea class="form-control" id="infossup" rows="3" maxlength="1000"
+                <textarea class="form-control" id="infossup" rows="3" maxlength="1000" th:field="*{information}"
                           placeholder="Votre petite info perso, une anecdote, faites-nous en profiter..."></textarea>
-            </div>
-
-            <div class="form-group row">
-                <p>
-                    Envoyez-nous une belle image du site, nous l'utiliserons en fond d'écran !
-                </p>
-                <p class="share-img">
-                    Taille de l'image : 1300*800 minimum, taille du fichier : maximum 2Mb.
-                </p>
-                <input type="hidden" name="MAX_FILE_SIZE" value="2_000_000">
-                <input class="download offset-3 col-6" type="file">
             </div>
             <hr class="hr">
 
             <div class="row">
                 <div class="offset-2 col-3">
                     <div class="btn-wrapper">
-                        <button type="button" class="btn">Annulez</button>
+                        <button type="reset" class="btn">Annulez</button>
                     </div>
                     <canvas></canvas>
                 </div>
                 <div class="offset-4 col-2">
                     <div class="btn-wrapper">
-                        <button type="button" class="btn">Envoyez</button>
+                        <button type="submit" class="btn">Envoyez</button>
                     </div>
                     <canvas></canvas>
                 </div>

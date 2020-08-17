@@ -15,8 +15,7 @@ import java.util.List;
 @Service
 public class TopoService {
 
-    public TopoService() {
-    }
+    public TopoService() {}
 
     public List<Topo> getTopos() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");

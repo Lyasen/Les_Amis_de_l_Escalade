@@ -42,11 +42,11 @@
 
     <main>
         <section class="row justify-content-center">
-            <form class="col-6" action="#">
+            <form class="col-6" th:action="@{/createTopo}" method="post" th:object="${new_topo}">
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label" for="site">Nom du site</label>
                     <div class="col-lg-9">
-                        <input class="form-control" type="text" name="place" id="site" placeholder="Le nom du site" minlength="3" maxlength="20"
+                        <input class="form-control" type="text" name="place" th:field="*{name_topo}" id="site" placeholder="Le nom du site" minlength="3" maxlength="20"
                             required>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label" for="place">Lieu</label>
                     <div class="col-lg-9">
-                        <input class="form-control" type="text" name="place" id="place" placeholder="Indiquez la commune la plus proche du site" minlength="3" maxlength="20"   required>
+                        <input class="form-control" th:field="*{location_topo}" type="text" name="place" id="place" placeholder="Indiquez la commune la plus proche du site" minlength="3" maxlength="20"   required>
                     </div>
                 </div>
                 <hr>
@@ -62,7 +62,7 @@
                 <div class="form-group row">
                     <label class="col-lg-12 col-form-label" for="spot">description du spot</label>
                     <div class="col-lg-12">
-                        <textarea class="form-control" type="text" name="spot" id="spot" rows="10" minlength="10" maxlength="1000"
+                        <textarea class="form-control" th:field="*{description_topo}" type="text" name="spot" id="spot" rows="10" minlength="10" maxlength="1000"
                              placeholder="Un petit résumé de l'endroit" required></textarea>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label" for="name">Auteur</label>
                     <div class="col-lg-9">
-                        <input class="form-control" type="text" name="name" id="name" minlength="3" maxlength="20"
+                        <input class="form-control" th:field="*{author}" type="text" name="name" id="name" minlength="3" maxlength="20"
                             placeholder="Nom de l'auteur du topo" required>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                 <div class="form-group row">
                     <label class="col-lg-4 col-form-label" for="today">Date de parution</label>
                     <div class="col-lg-8">
-                        <input class="form-control" type="date" name="today" id="today" readonly>
+                        <input class="form-control" th:field="*{publication}" type="date" name="today" id="today" readonly>
                     </div>
                 </div>
                 <hr>
@@ -90,7 +90,7 @@
                     <div class="form-check">
                         <div class="col-lg-2">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="dispo" value="oui" checked>
+                                <input class="form-check-input" th:field="*{is_lend}" type="radio" name="dispo" value="oui" checked>
                                 oui
                             </label>
                         </div>
@@ -108,13 +108,13 @@
                 <div class="row">
                     <div class="offset-2 col-3">
                         <div class="btn-wrapper">
-                            <button type="button" class="btn">Annulez</button>
+                            <button type="reset" class="btn">Annulez</button>
                         </div>
                         <canvas></canvas>
                     </div>
                     <div class="offset-4 col-2">
                         <div class="btn-wrapper">
-                            <button type="button" class="btn">Envoyez</button>
+                            <button type="submit" class="btn">Envoyez</button>
                         </div>
                         <canvas></canvas>
                     </div>
