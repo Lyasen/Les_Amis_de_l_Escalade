@@ -13,6 +13,8 @@ public class ShareSiteService {
     @Autowired
     ShareSiteDao shareSiteDao;
 
+    public ShareSiteService() {}
+
     public Form_shareSite save(Form_shareSite form) {
         return shareSiteDao.save(form);
     }

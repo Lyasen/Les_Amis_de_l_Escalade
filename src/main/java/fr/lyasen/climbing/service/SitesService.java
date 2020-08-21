@@ -1,22 +1,18 @@
 package fr.lyasen.climbing.service;
 
+import fr.lyasen.climbing.dao.ShareSiteDao;
+import fr.lyasen.climbing.model.forms.Form_shareSite;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 public class SitesService {
+    @Autowired
+    ShareSiteDao shareSiteDao;
+
     public SitesService(){}
 
-    public Map<String, String> getLocations() {
-        Map<String, String> locations = new HashMap<>();
-        locations.put("dolomites", "dolomites.html");
-        locations.put("dorset", "dorset.html");
-        locations.put("sormiou", "sormiou.html");
-        locations.put("fontainebleau", "fontainebleau.html");
-        locations.put("ennedi", "ennedi.html");
-        locations.put("trango", "trango.html");
-        return locations;
+    public Form_shareSite getSite(int id) {
+        return shareSiteDao.findById(id).orElse(null);
     }
 }

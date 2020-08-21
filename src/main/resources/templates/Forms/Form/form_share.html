@@ -89,20 +89,20 @@
                 <label class="col-lg-6 col-form-label">Type d'escalade</label>
                 <div class="col-lg-6">
                     <label class="form-check">
-                        <input type="radio" class="form-check-input" id="blocks" value="blocks" name="climbingType" checked>
+                        <input type="radio" class="form-check-input" id="blocks" th:value="BLOCKS" th:field="*{climbType}" name="climbingType" checked="checked">
                         <label class="form-check-label" for="blocks">Blocs</label>
                     </label>
                     <label class="form-check">
-                        <input type="radio" class="form-check-input" id="cliff" value="cliff" name="climbingType" >
+                        <input type="radio" class="form-check-input" id="cliff" th:value="CLIFF" th:field="*{climbType}" name="climbingType" >
                         <label class="form-check-label" for="cliff">Falaises</label>
                     </label>
                     <label class="form-check">
-                        <input type="radio" class="form-check-input" id="mountain" value="mountain" name="climbingType" >
+                        <input type="radio" class="form-check-input" id="mountain" th:value="MOUNTAIN" th:field="*{climbType}" name="climbingType" >
                         <label class="form-check-label" for="mountain">Montagne</label>
                     </label>
                     <label class="form-check">
-                        <input type="radio" class="form-check-input" id="high-mountain" value="high-mountain" name="climbingType" >
-                        <label class="form-check-label" for="high-mountain">Haute-Montagne</label>
+                        <input type="radio" class="form-check-input" id="high_mountain" th:value="HIGHMOUNTAIN" th:field="*{climbType}" name="climbingType" >
+                        <label class="form-check-label" for="high_mountain">Haute-Montagne</label>
                     </label>
                 </div>
             </div>
@@ -140,9 +140,9 @@
                 <label class="col-lg-6 col-form-label">Nombre de voies</label>
                 <div class="col-lg-6">
                     <label for="voiesMin">Minimum</label>
-                    <input class="form-control" type="number" name="voies" id="voiesMin" min="1" max="1000" th:field="*{lanes_min}">
+                    <input class="form-control" type="number" name="voies" id="voiesMin" min="1" max="1000" th:field="*{lanesMin}">
                     <label for="voiesMax">Maximum</label>
-                    <input class="form-control" type="number" name="voies" id="voiesMax" min="2" max="1000" th:field="*{lanes_max}">
+                    <input class="form-control" type="number" name="voies" id="voiesMax" min="2" max="1000" th:field="*{lanesMax}">
                 </div>
             </div>
             <hr>

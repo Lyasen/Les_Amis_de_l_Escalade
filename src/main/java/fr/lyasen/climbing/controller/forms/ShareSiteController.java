@@ -21,8 +21,9 @@ public class ShareSiteController {
     }
 
     @PostMapping("/share")
-    public String shareSubmit(@ModelAttribute Form_shareSite site) {
+    public String shareSubmit(@ModelAttribute Form_shareSite site, Model model) {
         shareSiteService.save(site);
+        model.addAttribute("site", site);
         return "/Forms/Form/form_share.html";
     }
 }
