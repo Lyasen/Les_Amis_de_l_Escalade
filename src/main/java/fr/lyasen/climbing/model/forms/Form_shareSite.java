@@ -10,7 +10,13 @@ public class Form_shareSite {
     private int siteId;
     @Column(name = "name", nullable = false, columnDefinition = "VARCHAR(32)")
     private String name;
-    @Column(name = "location", nullable = false, columnDefinition = "VARCHAR(32)")
+    @Column(name = "country", nullable = false, columnDefinition = "VARCHAR(50)")
+    private String country;
+    @Column(name = "region", nullable = false, columnDefinition = "VARCHAR(50)")
+    private String region;
+    @Column(name = "department", nullable = false, columnDefinition = "VARCHAR(50)")
+    private String department;
+    @Column(name = "location", nullable = false, columnDefinition = "VARCHAR(50)")
     private String location;
     @Column(name = "altitude", nullable = false, columnDefinition = "INT UNSIGNED")
     private Integer altitude;
@@ -18,17 +24,30 @@ public class Form_shareSite {
     private Integer height;
 
     private enum ClimbType {
-        BLOCKS , CLIFFS, MOUNTAIN, HIGHMOUNTAIN
+        BLOCKS ("Blocs") , CLIFFS ("Falaises"), MOUNTAIN ("Montagne"), HIGHMOUNTAIN ("Haute-Montagne");
+        private final String name;
+        //  Constructor
+        ClimbType(String name) {
+            this.name = name;
+        }
+        public String getName() {
+            return name;
+        }
     }
-
     @Enumerated(EnumType.STRING)
     @Column(name = "climb_type")
     private ClimbType climbType;
 
     private enum Orientation {
-        ALL, NORTH, SOUTH, EAST, WEST
+       NORTH ("Nord"), SOUTH ("Sud"), EAST ("Est"), WEST ("Ouest");
+       private final String name;
+       Orientation(String name) {
+           this.name = name;
+       }
+       public String getName() {
+           return name;
+       }
     }
-
     @Enumerated(EnumType.STRING)
     @Column(name = "orientation")
     private Orientation orientation;
@@ -39,9 +58,15 @@ public class Form_shareSite {
     private Integer lanesMax;
 
     private enum SiteLevel {
-        ROOKIE, AMATEUR, EXPERIENCED, EXPERT
+        ROOKIE ("Débutant (du 3a au 5c)"), AMATEUR ("Amateur (du 6a au 6c)"), EXPERIENCED ("Confirmé (du 7a au 7c)"), EXPERT ("Expert (à partir du 8a)");
+        private final String name;
+        SiteLevel(String name) {
+            this.name = name;
+        }
+        public String getName() {
+            return name;
+        }
     }
-
     @Enumerated(EnumType.STRING)
     @Column(name = "site_level")
     private SiteLevel siteLevel;
@@ -57,6 +82,9 @@ public class Form_shareSite {
 
     public Form_shareSite(int siteId,
                           String name,
+                          String country,
+                          String region,
+                          String department,
                           String location,
                           int altitude,
                           int height,
@@ -70,6 +98,9 @@ public class Form_shareSite {
                           boolean isOfficial) {
         this.siteId = siteId;
         this.name = name;
+        this.country = country;
+        this.region = region;
+        this.department = department;
         this.location = location;
         this.altitude = altitude;
         this.height = height;
@@ -97,6 +128,30 @@ public class Form_shareSite {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
     }
 
     public String getLocation() {

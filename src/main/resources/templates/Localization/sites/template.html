@@ -56,70 +56,59 @@
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/rochers.png}" alt="Rochers">
                             </span>
-                        <span>Type</span><br><span>Haute-Montagne</span>
+                        <span>Type</span><br><span th:text="${site.climbType}"></span>
                     </li>
                     <li class="li">
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/hauteur.png}" alt="Hauteur">
                             </span>
-                        <span>Hauteur maximale des voies</span><br><span>450 mètres</span>
+                        <span>Hauteur maximale des voies</span><br><span th:text="${site.height}"></span><span> mètres</span>
                     </li>
                     <li class="li">
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/hauteur_voies.png}" alt="Hauteur des voies">
                             </span>
-                        <span>Altitude maximale au pied des voies</span><br><span>3 343 mètres</span>
+                        <span>Altitude maximale au pied des voies</span><br><span th:text="${site.altitude}"></span><span> mètres</span>
                     </li>
                     <li class="li">
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/orientation.png}" alt="Orientaiton">
                             </span>
-                        <span>Orientation</span><br><span>Toutes</span>
+                        <span>Orientation</span><br><span th:text="${site.orientation}"></span>
                     </li>
                     <li class="li">
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/voies.png}" alt="Voies">
                             </span>
-                        <span>Nombre de voies</span><br><span>Plus de 100 voies</span>
+                        <span>Nombre de voies</span><br><span th:text="${site.lanesMin}"></span><span> - </span><span th:text="${site.lanesMax}"></span>
                     </li>
                     <li class="li">
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/cotation.png}" alt="Cotation">
                             </span>
-                        <span>Cotations</span><br><span>Du 6a au 8c</span><br><span>Amateur à expert</span>
+                        <span>Cotations</span><span></span><br><span th:text="${site.siteLevel}"></span>
                     </li>
                 </ul>
             </div>
             <div class="col-6">
-                <h2><a class="color-h2" href="https://earth.google.com/web/@46.41021115,11.8440351,2953.0356878a,3528.01088546d,35y,0h,45t,0r/data=CkwaShJECiUweDQ3Nzg0MzVmZjlkMjE0MzE6MHg2NzRmMjcwNzgzZjhkOWJiGeH3JdGBNEdAIShaXl4lsCdAKglEb2xvbWl0ZXMYAiABKAI" target="_blank" title="Admirez sur Google Earth">Dolomites - Italie</a></h2>
-                <p>
-                    Le massif des Dolomites s’étend au sud de la frontière austro-italienne. Ces parois
-                    de
-                    calcaire imposantes viennent parfois gratter le ciel à des altitudes de 3 000 m et
-                    représentent l’une des destinations d’escalade les plus variées d’Europe.
-                </p>
-                <p>
-                    Qu’il s’agisse de randonnées avec les mains, de voies d’une seule longueur ou de
-                    terrain
-                    d’aventure endurant, il y en a pour tous les goûts et niveaux de grimpe. Ajoutez à
-                    cela
-                    un
-                    paysage sublime et vous obtenez un temple de l’escalade à ne surtout pas
-                    manquer.
-                </p>
+                <h2><a class="color-h2" href="https://www.google.fr/intl/fr/earth/" target="_blank" title="Retrouvez ce site en 3D sur Google Earth" th:text="${site.name}"></a></h2>
+                <p th:text="${site.information}"></p>
 
                 <ul>
                     <li class="li">
                             <span>
                                 <img th:src="@{/img/img_sites/restrictions.png}" alt="Restrictions" class="icon-description">
                             </span>
-                        <span>Restrictions possibles</span><br><span>Des restrictions de circulation ont été introduites dans l’un des principaux points d’accès aux montagnes des Dolomites, en Italie, dans le but de lutter contre la surpopulation pendant la saison touristique estivale. L'objectif du projet est de réduire d'environ 20% l'accès à la montagne, site classé au patrimoine mondial de l'Unesco. Les restrictions seront en vigueur du lundi au vendredi de 9h à 16h jusqu’au 31 août et s’appliqueront aux motos et aux voitures sauf: véhicules électriques, transports en commun et véhicules de personnes travaillant ou séjournant dans la zone. Seuls 200 véhicules seront autorisés chaque matin et entre 100 et 150 après-midi.</span>
+                        <span>Restrictions possibles</span><br><span th:text="${site.restrictions}"></span>
                     </li>
                     <li class="li">
                             <span>
                                 <img th:src="@{/img/img_sites/commune.png}" alt="Commune" class="icon-description">
                             </span>
-                        <span>Commune la plus proche du site</span><br><span>Rocca Pietore, Belluno, Italie</span>
+                        <span>Pays</span><span> - </span><span th:text="${site.country}"></span><br>
+                        <span>Région</span><span> - </span><span th:text="${site.region}"></span><br>
+                        <span>Département</span><span> - </span><span th:text="${site.department}"></span><br>
+                        <span th:style="'margin-left:59px'">Commune</span><span> - </span><span th:text="${site.location}"></span>
                     </li>
                 </ul>
             </div>

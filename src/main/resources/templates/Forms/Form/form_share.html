@@ -61,10 +61,34 @@
             <hr>
 
             <div class="form-group row">
-                <label class="col-lg-4 col-form-label" for="village">Commune proche</label>
+                <label class="col-lg-4 col-form-label" for="village">Pays</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="country" id="country" minlength="2" maxlength="50"  th:field="*{country}" required>
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-4 col-form-label" for="village">Région</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="region" id="region" minlength="2" maxlength="50"  th:field="*{region}" required>
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-4 col-form-label" for="village">Département</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="department" id="department" minlength="2" maxlength="50"  th:field="*{department}" required>
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-4 col-form-label" for="village">Commune</label>
                 <div class="col-lg-8">
                     <input class="form-control" type="text" name="village" id="village"
-                           placeholder="La commune la plus à proximité du site" minlength="2" maxlength="20"  th:field="*{location}" required>
+                           placeholder="Commune principale à proximité du site" minlength="2" maxlength="50"  th:field="*{location}" required>
                 </div>
             </div>
             <hr>
@@ -87,50 +111,22 @@
 
             <div class="form-group row">
                 <label class="col-lg-6 col-form-label">Type d'escalade</label>
-                <div class="col-lg-6">
-                    <label class="form-check">
-                        <input type="radio" class="form-check-input" id="blocks" th:value="BLOCKS" th:field="*{climbType}" name="climbingType" checked="checked">
-                        <label class="form-check-label" for="blocks">Blocs</label>
-                    </label>
-                    <label class="form-check">
-                        <input type="radio" class="form-check-input" id="cliff" th:value="CLIFF" th:field="*{climbType}" name="climbingType" >
-                        <label class="form-check-label" for="cliff">Falaises</label>
-                    </label>
-                    <label class="form-check">
-                        <input type="radio" class="form-check-input" id="mountain" th:value="MOUNTAIN" th:field="*{climbType}" name="climbingType" >
-                        <label class="form-check-label" for="mountain">Montagne</label>
-                    </label>
-                    <label class="form-check">
-                        <input type="radio" class="form-check-input" id="high_mountain" th:value="HIGHMOUNTAIN" th:field="*{climbType}" name="climbingType" >
-                        <label class="form-check-label" for="high_mountain">Haute-Montagne</label>
-                    </label>
+                <div class="offset-6 col-lg-6" th:each="type : ${T(fr.lyasen.climbing.model.forms.Form_shareSite.ClimbType).values()}">
+                        <label class="form-check">
+                            <input type="radio" class="form-check-input" th:id="${type}" th:value="${type}" th:text="${type.name}" th:field="*{climbType}" name="climbingType" checked>
+                            <label class="form-check-label" th:for="${type}" ></label>
+                        </label>
                 </div>
             </div>
             <hr>
 
             <div class="form-group row">
                 <label class="col-lg-6 col-form-label">Orientation</label>
-                <div class="col-lg-6">
-                    <!--    I left the main guidelines so as not to unnecessarily lengthen the list -->
+                <div class="offset-6 col-lg-6" th:each="orientation : ${T(fr.lyasen.climbing.model.forms.Form_shareSite.Orientation).values()}">
                     <label class="escalade form-check">
-                        <input type="checkbox" class="form-check-input" id="north" >
+                        <input type="checkbox" class="form-check-input" th:id="${orientation}" th:value="${orientation}" th:text="${orientation.name}" th:field="*{orientation}">
                         <span class="checkmark"></span>
-                        <label class="form-check-label" for="north">Nord</label>
-                    </label>
-                    <label class="escalade form-check">
-                        <input type="checkbox" class="form-check-input" id="south" >
-                        <span class="checkmark"></span>
-                        <label class="form-check-label" for="south">Sud</label>
-                    </label>
-                    <label class="escalade form-check">
-                        <input type="checkbox" class="form-check-input" id="east" >
-                        <span class="checkmark"></span>
-                        <label class="form-check-label" for="east">Est</label>
-                    </label>
-                    <label class="escalade form-check">
-                        <input type="checkbox" class="form-check-input" id="west" >
-                        <span class="checkmark"></span>
-                        <label class="form-check-label" for="west">Ouest</label>
+                        <label class="form-check-label" th:for="${orientation}"></label>
                     </label>
                 </div>
             </div>
@@ -148,23 +144,11 @@
             <hr>
 
             <div class="form-group row">
-                <label class="col-lg-6 col-form-label">Niveau(x) des sites</label>
-                <div class="col-lg-6">
+                <label class="col-lg-6 col-form-label" >Niveau(x) des sites</label>
+                <div class="col-lg-6" th:each="level : ${T(fr.lyasen.climbing.model.forms.Form_shareSite.SiteLevel).values()}">
                     <label class="form-check">
-                        <input type="checkbox" class="form-check-input" id="rookie" name="level" >
-                        <label class="form-check-label" for="rookie">Débutant (du 3a au 5c)</label>
-                    </label>
-                    <label class="form-check">
-                        <input type="checkbox" class="form-check-input" id="amateur" name="level" >
-                        <label class="form-check-label" for="amateur">Amateur (du 6a au 6c)</label>
-                    </label>
-                    <label class="form-check">
-                        <input type="checkbox" class="form-check-input" id="confirmed" name="level" >
-                        <label class="form-check-label" for="confirmed">Confirmé (du 7a au 7c)</label>
-                    </label>
-                    <label class="form-check">
-                        <input type="checkbox" class="form-check-input" id="pro" name="level" >
-                        <label class="form-check-label" for="pro">Expert (à partir du 8a)</label>
+                        <input type="checkbox" class="form-check-input" th:id="${level}"  th:value="${level}" th:text="${level.name}" th:field="*{siteLevel}" name="level">
+                        <label class="form-check-label" th:for="${level}"></label>
                     </label>
                 </div>
             </div>
