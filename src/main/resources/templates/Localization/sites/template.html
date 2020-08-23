@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/Scss/pagesCss/global.css}">
     <link rel="stylesheet" th:href="@{/Scss/sitesCss/globalSites.css}">
     <link rel="stylesheet" th:href="@{/Scss/sitesCss/europe/dolomites.css}">
     <link rel="shortcut icon" th:href="@{/img/img_pages/climb.png}" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Engagement&display=swap" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Engagement&display=swap}" rel="stylesheet">
     <title th:text="${site.name}"></title>
     <meta name="description"
           content="Tous les sites répertoriés par les amis de l'escalade, pour les amateurs et les professionnels, pour les locaux et les nomades">
@@ -19,7 +19,7 @@
 <header id="dolo">
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <!--    Logo    -->
-        <img th:src="@{/Img/Img_pages/mountaintop.png}" alt="Logo">
+        <img th:src="@{/img/img_pages/mountaintop.png}" alt="Logo">
 
         <!--    Bouton  -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="responsive">
@@ -31,16 +31,16 @@
         <div class="collapse navbar-collapse" id="responsive">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a th:href="@{main}" class="nav-link active">Escalader jusqu'à l'accueil</a>
+                    <a th:href="@{/main}" class="nav-link active">Escalader jusqu'à l'accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a th:href="@{sites}" class="nav-link">Découvrez les Sites</a>
+                    <a th:href="@{/sites}" class="nav-link">Découvrez les Sites</a>
                 </li>
                 <li class="nav-item">
-                    <a th:href="@{topo}" class="nav-link">Réservez votre topo</a>
+                    <a th:href="@{/topo}" class="nav-link">Réservez votre topo</a>
                 </li>
                 <li class="nav-item">
-                    <a th:href="@{jargon}" class="nav-link">Le jargon du grimpeur</a>
+                    <a th:href="@{/jargon}" class="nav-link">Le jargon du grimpeur</a>
                 </li>
             </ul>
         </div>
@@ -91,7 +91,7 @@
                 </ul>
             </div>
             <div class="col-6">
-                <h2><a class="color-h2" href="https://www.google.fr/intl/fr/earth/" target="_blank" title="Retrouvez ce site en 3D sur Google Earth" th:text="${site.name}"></a></h2>
+                <h2><a class="color-h2" th:href="@{https://www.google.fr/intl/fr/earth/}" target="_blank" title="Retrouvez ce site en 3D sur Google Earth" th:text="${site.name}"></a></h2>
                 <p th:text="${site.information}"></p>
 
                 <ul>
@@ -118,12 +118,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <div class="col-12"><a class="btn" th:href="@{commentary}" role="button">Poster un commentaire</a></div>
+                <div class="col-12"><a class="btn" th:href="@{/commentary}" role="button">Poster un commentaire</a></div>
             </div>
         </div>
         <div class="border border-dark rounded row">
             <div class="col-12">
-                <p>Les commentaires viendront s'ajouter ici</p>
+                <p></p>
             </div>
         </div>
     </div>
@@ -152,17 +152,17 @@
                     <div class="footer-icon collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="https://fr-fr.facebook.com/" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
+                                <a th:href="@{https://fr-fr.facebook.com/}" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
                                                                                             title="Facebook" width="32" height="32"></a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="https://twitter.com/?lang=fr" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
+                                <a th:href="@{https://twitter.com/?lang=fr}" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
                                                                                              title="Twitter" width="32" height="32"></a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="https://www.verti-call.com/" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
+                                <a th:href="@{https://www.verti-call.com/}" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
                                                                                             title="Verti-Call" width="32" height="32"></a>
                             </li>
                         </ul>
@@ -178,17 +178,17 @@
                     <div class="useful-links collapse navbar-collapse">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="https://www.ffme.fr/" class="nav-weight nav-link active"
+                                <a th:href="@{https://www.ffme.fr/}" class="nav-weight nav-link active"
                                    title="Fédération Française de la Montagne et de l'Escalade">FFME</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="https://climbingaway.fr/fr/" class="nav-weight nav-link"
+                                <a th:href="@{https://climbingaway.fr/fr/}" class="nav-weight nav-link"
                                    title="Climbingaway: Ma qué qué fait ?">Climbingaway</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe"
+                                <a th:href="@{https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe}"
                                    class="nav-weight nav-link" title="Boira la Reda Bulli !">Red Bull</a>
                             </li>
                         </ul>
