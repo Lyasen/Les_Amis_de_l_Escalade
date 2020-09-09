@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
+
 @Controller
 public class ConnectionController {
     @Autowired
@@ -20,5 +22,11 @@ public class ConnectionController {
     public String connection(Model model) {
         model.addAttribute("connection", new Form_connection());
         return "Forms/Form/form_connection.html";
+    }
+
+    @PostMapping("/connection")
+    public String connect(@Valid @ModelAttribute Form_connection connect, Model model) {
+        model.addAttribute("main", connect);
+        return "redirect:main";
     }
 }

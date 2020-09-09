@@ -22,7 +22,7 @@ public class Form_topo {
     @Column(name = "publication", nullable = false)
     @DateTimeFormat(pattern = "dd-MM-YYYY")
     private Date publication;
-    @Column(name = "is_lend", columnDefinition = "BOOLEAN DEFAULT FALSE")
+    @Column(name = "is_lend", columnDefinition = "BOOLEAN DEFAULT TRUE")
     private boolean isLend;
 
     public Form_topo(){}

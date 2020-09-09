@@ -46,7 +46,7 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label" for="site">Nom du site</label>
                     <div class="col-lg-9">
-                        <input class="form-control" type="text" name="place" th:field="*{name_topo}" id="site" placeholder="Le nom du site" minlength="3" maxlength="20"
+                        <input class="form-control" type="text" name="place" th:field="*{topo}" id="site" placeholder="Le nom du site" minlength="3" maxlength="20"
                             required>
                     </div>
                 </div>
@@ -54,7 +54,7 @@
                 <div class="form-group row">
                     <label class="col-lg-3 col-form-label" for="place">Lieu</label>
                     <div class="col-lg-9">
-                        <input class="form-control" th:field="*{location_topo}" type="text" name="place" id="place" placeholder="Indiquez la commune la plus proche du site" minlength="3" maxlength="20"   required>
+                        <input class="form-control" th:field="*{locationTopo}" type="text" name="place" id="place" placeholder="Indiquez la commune la plus proche du site" minlength="3" maxlength="20"   required>
                     </div>
                 </div>
                 <hr>
@@ -62,7 +62,7 @@
                 <div class="form-group row">
                     <label class="col-lg-12 col-form-label" for="spot">description du spot</label>
                     <div class="col-lg-12">
-                        <textarea class="form-control" th:field="*{description_topo}" type="text" name="spot" id="spot" rows="10" minlength="10" maxlength="1000"
+                        <textarea class="form-control" th:field="*{descriptionTopo}" type="text" name="spot" id="spot" rows="10" minlength="10" maxlength="1000"
                              placeholder="Un petit résumé de l'endroit" required></textarea>
                     </div>
                 </div>
@@ -90,7 +90,8 @@
                     <div class="form-check">
                         <div class="col-lg-2">
                             <label class="form-check-label">
-                                <input class="form-check-input" th:field="*{is_lend}" type="radio" name="dispo" value="oui" checked>
+                                <input class="form-check-input" type="radio" name="dispo" value="oui" checked>
+                                <!--th:if="${topo.isLend}" th:field="*{isLend}" -->
                                 oui
                             </label>
                         </div>
@@ -99,6 +100,7 @@
                         <div class="col-2">
                             <label class="form-check-label">
                                 <input class="form-check-input" type="radio" name="dispo" value="non">
+                                <!-- th:unless="${topo.isLend}" th:field="*{isLend}" -->
                                 non
                             </label>
                         </div>
@@ -177,14 +179,11 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="https://climbingaway.fr/fr/" class="nav-weight nav-link"
-                                        title="Combien de temps dure la chute, darling !">Climbingaway</a>
+                                    <a href="https://climbingaway.fr/fr/" class="nav-weight nav-link" >Climbingaway</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe"
-                                        class="nav-weight nav-link"
-                                        title="Du Red Bull ! J'appelle ma fille ursule !">Red Bull</a>
+                                    <a href="https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe" class="nav-weight nav-link" >Red Bull</a>
                                 </li>
                             </ul>
                         </div>

@@ -8,7 +8,7 @@ public class Form_shareSite {
     @Id
     @Column(name = "site_id", nullable = false, columnDefinition = "INT UNSIGNED AUTO_INCREMENT")
     private int siteId;
-    @Column(name = "name", nullable = false, columnDefinition = "VARCHAR(32)")
+    @Column(name = "name", nullable = false, columnDefinition = "VARCHAR(50)")
     private String name;
     @Column(name = "country", nullable = false, columnDefinition = "VARCHAR(50)")
     private String country;
@@ -23,31 +23,10 @@ public class Form_shareSite {
     @Column(name = "height", nullable = false, columnDefinition = "INT UNSIGNED")
     private Integer height;
 
-    private enum ClimbType {
-        BLOCKS ("Blocs") , CLIFFS ("Falaises"), MOUNTAIN ("Montagne"), HIGHMOUNTAIN ("Haute-Montagne");
-        private final String name;
-        //  Constructor
-        ClimbType(String name) {
-            this.name = name;
-        }
-        public String getName() {
-            return name;
-        }
-    }
     @Enumerated(EnumType.STRING)
     @Column(name = "climb_type")
     private ClimbType climbType;
 
-    private enum Orientation {
-       NORTH ("Nord"), SOUTH ("Sud"), EAST ("Est"), WEST ("Ouest");
-       private final String name;
-       Orientation(String name) {
-           this.name = name;
-       }
-       public String getName() {
-           return name;
-       }
-    }
     @Enumerated(EnumType.STRING)
     @Column(name = "orientation")
     private Orientation orientation;
@@ -57,16 +36,6 @@ public class Form_shareSite {
     @Column(name = "lanes_max", nullable = false, columnDefinition = "INT UNSIGNED")
     private Integer lanesMax;
 
-    private enum SiteLevel {
-        ROOKIE ("Débutant (du 3a au 5c)"), AMATEUR ("Amateur (du 6a au 6c)"), EXPERIENCED ("Confirmé (du 7a au 7c)"), EXPERT ("Expert (à partir du 8a)");
-        private final String name;
-        SiteLevel(String name) {
-            this.name = name;
-        }
-        public String getName() {
-            return name;
-        }
-    }
     @Enumerated(EnumType.STRING)
     @Column(name = "site_level")
     private SiteLevel siteLevel;

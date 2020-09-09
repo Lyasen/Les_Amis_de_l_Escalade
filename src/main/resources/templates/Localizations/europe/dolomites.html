@@ -7,19 +7,19 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/Scss/pagesCss/global.css}">
     <link rel="stylesheet" th:href="@{/Scss/sitesCss/globalSites.css}">
-    <link rel="stylesheet" th:href="@{/Scss/sitesCss/france/annot.css}">
+    <link rel="stylesheet" th:href="@{/Scss/sitesCss/europe/dolomites.css}">
     <link rel="shortcut icon" th:href="@{/img/img_pages/climb.png}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Engagement&display=swap" rel="stylesheet">
-    <title>Annot - Alpes de Haute-Provence</title>
+    <title>Les Dolomites</title>
     <meta name="description"
         content="Tous les sites répertoriés par les amis de l'escalade, pour les amateurs et les professionnels, pour les locaux et les nomades">
 </head>
 
 <body>
-    <header id="annot">
+    <header id="dolo">
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
             <!--    Logo    -->
-            <img th:src="@{/img/img_pages/mountaintop.png}" alt="Logo">
+            <img th:src="@{/Img/Img_pages/mountaintop.png}" alt="Logo">
 
             <!--    Bouton  -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="responsive">
@@ -31,16 +31,16 @@
             <div class="collapse navbar-collapse" id="responsive">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a th:href="@{/MainPages/pagesHtml/main.html}" class="nav-link active">Escalader jusqu'à l'accueil</a>
+                        <a th:href="@{main}" class="nav-link active">Escalader jusqu'à l'accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a th:href="@{/MainPages/pagesHtml/sites.html}" class="nav-link">Découvrez les Sites</a>
+                        <a th:href="@{sites}" class="nav-link">Découvrez les Sites</a>
                     </li>
                     <li class="nav-item">
-                        <a th:href="@{/MainPages/pagesHtml/topos.html}" class="nav-link">Réservez votre topo</a>
+                        <a th:href="@{topo}" class="nav-link">Réservez votre topo</a>
                     </li>
                     <li class="nav-item">
-                        <a th:href="@{/MainPages/pagesHtml/jargon.html}" class="nav-link">Le jargon du grimpeur</a>
+                        <a th:href="@{jargon}" class="nav-link">Le jargon du grimpeur</a>
                     </li>
                 </ul>
             </div>
@@ -56,25 +56,25 @@
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/rochers.png}" alt="Rochers">
                             </span>
-                            <span>Type</span><br><span>Falaises</span>
+                            <span>Type</span><br><span>Haute-Montagne</span>
                         </li>
                         <li class="li">
                             <span>
-                                <img class="icon-description" th:src="@{/img/img_sites/hauteur.png}" alt="hauteur">
+                                <img class="icon-description" th:src="@{/img/img_sites/hauteur.png}" alt="Hauteur">
                             </span>
-                            <span>Hauteur maximale des voies</span><br><span>100 mètres</span>
+                            <span>Hauteur maximale des voies</span><br><span>450 mètres</span>
                         </li>
                         <li class="li">
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/hauteur_voies.png}" alt="Hauteur des voies">
                             </span>
-                            <span>Altitude maximale au pied des voies</span><br><span>680 mètres</span>
+                            <span>Altitude maximale au pied des voies</span><br><span>3 343 mètres</span>
                         </li>
                         <li class="li">
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/orientation.png}" alt="Orientaiton">
                             </span>
-                            <span>Orientation</span><br><span>Ouest -  Sud -  Est</span>
+                            <span>Orientation</span><br><span>Toutes</span>
                         </li>
                         <li class="li">
                             <span>
@@ -86,40 +86,40 @@
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/cotation.png}" alt="Cotation">
                             </span>
-                            <span>Cotations</span><br><span>Du 5b au 8a</span><br><span>Débutant à expert</span>
+                            <span>Cotations</span><br><span>Du 6a au 8c</span><br><span>Amateur à expert</span>
                         </li>
                     </ul>
                 </div>
                 <div class="col-6">
-                    <h2><a class="color-h2" href="https://earth.google.com/web/@43.96311345,6.663147,727.30470111a,16732.89769623d,35y,0h,0t,0r/data=CkcaRRI_CiQweDEyY2M2YmY3MDkwNmYyODE6MHhhZmJmNzBjOTI1OTc3ZDMZUfNV8rH7RUAhU-knnN2qGkAqBUFubm90GAIgAQ" target="_blank" title="Admirez sur Google Earth">Annot - Alpes de Haute-Provence</a></h2>
+                    <h2><a class="color-h2" href="https://earth.google.com/web/@46.41021115,11.8440351,2953.0356878a,3528.01088546d,35y,0h,45t,0r/data=CkwaShJECiUweDQ3Nzg0MzVmZjlkMjE0MzE6MHg2NzRmMjcwNzgzZjhkOWJiGeH3JdGBNEdAIShaXl4lsCdAKglEb2xvbWl0ZXMYAiABKAI" target="_blank" title="Admirez sur Google Earth">Dolomites - Italie</a></h2>
                     <p>
-                        Voilà un site de bloc exceptionnel au milieu de la forêt méridionale. Annot a du
-                        charme,
-                        du
-                        cachet et nécessite de la technique car le niveau 6B est requis et une bonne
-                        connaissance
-                        des voies en fissures est aussi un préalable. Mais le site offre un régal de
-                        sensations
-                        et
-                        de découverte à ceux qui veulent y apprendre et grimper des heures durant. De plus,
-                        l’environnement est sympathique et se prête particulièrement bien à un séjour
-                        bucolique
-                        et
-                        sportif !
+                        Le massif des Dolomites s’étend au sud de la frontière austro-italienne. Ces parois
+                        de
+                        calcaire imposantes viennent parfois gratter le ciel à des altitudes de 3 000 m et
+                        représentent l’une des destinations d’escalade les plus variées d’Europe.
                     </p>
-
+                    <p>
+                        Qu’il s’agisse de randonnées avec les mains, de voies d’une seule longueur ou de
+                        terrain
+                        d’aventure endurant, il y en a pour tous les goûts et niveaux de grimpe. Ajoutez à
+                        cela
+                        un
+                        paysage sublime et vous obtenez un temple de l’escalade à ne surtout pas
+                        manquer.
+                    </p>
+               
                     <ul>
                         <li class="li">
                             <span>
                                 <img th:src="@{/img/img_sites/restrictions.png}" alt="Restrictions" class="icon-description">
                             </span>
-                            <span>Restrictions possibles</span><br><span></span>
+                            <span>Restrictions possibles</span><br><span>Des restrictions de circulation ont été introduites dans l’un des principaux points d’accès aux montagnes des Dolomites, en Italie, dans le but de lutter contre la surpopulation pendant la saison touristique estivale. L'objectif du projet est de réduire d'environ 20% l'accès à la montagne, site classé au patrimoine mondial de l'Unesco. Les restrictions seront en vigueur du lundi au vendredi de 9h à 16h jusqu’au 31 août et s’appliqueront aux motos et aux voitures sauf: véhicules électriques, transports en commun et véhicules de personnes travaillant ou séjournant dans la zone. Seuls 200 véhicules seront autorisés chaque matin et entre 100 et 150 après-midi.</span>
                         </li>
                         <li class="li">
                             <span>
                                 <img th:src="@{/img/img_sites/commune.png}" alt="Commune" class="icon-description">
                             </span>
-                            <span>Commune la plus proche du site</span><br><span>Annot, 04240, France</span>
+                            <span>Commune la plus proche du site</span><br><span>Rocca Pietore, Belluno, Italie</span>
                         </li>
                     </ul>
                 </div>
@@ -194,13 +194,11 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="https://climbingaway.fr/fr/" class="nav-weight nav-link"
-                                        title="Climbingaway: Je crois que mon matos est en train de décrocheeeeer !">Climbingaway</a>
+                                    <a href="https://climbingaway.fr/fr/" class="nav-weight nav-link" >Climbingaway</a>
                                 </li>
 
                                 <li class="nav-item">
-                                    <a href="https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe"
-                                        class="nav-weight nav-link" title="Pfiou ! Un monticule de Red Bull !">Red Bull</a>
+                                    <a href="https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe" class="nav-weight nav-link">Red Bull</a>
                                 </li>
                             </ul>
                         </div>

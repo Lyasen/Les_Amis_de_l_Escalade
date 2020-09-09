@@ -56,7 +56,7 @@
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/rochers.png}" alt="Rochers">
                             </span>
-                        <span>Type</span><br><span th:text="${site.climbType}"></span>
+                        <span>Type</span><br><span th:text="${site.climbType.label}"></span>
                     </li>
                     <li class="li">
                             <span>
@@ -72,9 +72,9 @@
                     </li>
                     <li class="li">
                             <span>
-                                <img class="icon-description" th:src="@{/img/img_sites/orientation.png}" alt="Orientaiton">
+                                <img class="icon-description" th:src="@{/img/img_sites/orientation.png}" alt="Orientation">
                             </span>
-                        <span>Orientation</span><br><span th:text="${site.orientation}"></span>
+                        <span>Orientation</span><br><span th:text="${site.orientation.label}"></span>
                     </li>
                     <li class="li">
                             <span>
@@ -86,7 +86,7 @@
                             <span>
                                 <img class="icon-description" th:src="@{/img/img_sites/cotation.png}" alt="Cotation">
                             </span>
-                        <span>Cotations</span><span></span><br><span th:text="${site.siteLevel}"></span>
+                        <span>Cotations</span><span></span><br><span th:text="${site.siteLevel.label}"></span>
                     </li>
                 </ul>
             </div>
@@ -183,13 +183,11 @@
                             </li>
 
                             <li class="nav-item">
-                                <a th:href="@{https://climbingaway.fr/fr/}" class="nav-weight nav-link"
-                                   title="Climbingaway: Ma qué qué fait ?">Climbingaway</a>
+                                <a th:href="@{https://climbingaway.fr/fr/}" class="nav-weight nav-link" >Climbingaway</a>
                             </li>
 
                             <li class="nav-item">
-                                <a th:href="@{https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe}"
-                                   class="nav-weight nav-link" title="Boira la Reda Bulli !">Red Bull</a>
+                                <a th:href="@{https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe}" class="nav-weight nav-link">Red Bull</a>
                             </li>
                         </ul>
                     </div>

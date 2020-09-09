@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("Localization/sites/")
+@RequestMapping("Localizations")
 public class SitesController {
     @Autowired
-    SitesService service = new SitesService();
+    SitesService service;
 
     @RequestMapping(value = "{id}", method = RequestMethod.GET)
     public String locationById(@PathVariable ("id") int id, Model model){
         Form_shareSite shareSite = service.getSite(id);
         model.addAttribute("site", shareSite);
-        return "Localization/sites/template.html";
+        return "Localizations/templateLocalizations.html";
     }
 }

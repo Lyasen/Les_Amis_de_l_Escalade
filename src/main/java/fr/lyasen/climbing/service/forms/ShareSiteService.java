@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- *  Represent a record from Form_ShareSite
+ *  Represent a record from Form_shareSite
  */
 @Service
 public class ShareSiteService {

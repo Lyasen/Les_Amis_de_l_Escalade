@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" th:href="@{/Scss/pagesCss/global.css}">
     <link rel="stylesheet" th:href="@{/Scss/FormCss/formShare.css}">
     <link rel="shortcut icon" th:href="@{/img/img_pages/climb.png}" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Engagement&display=swap" rel="stylesheet">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Engagement&display=swap}" rel="stylesheet">
     <title>Partagez vos informations avec les Amis de l'escalade</title>
     <meta name="description" content="Vous connaissez des endroits particuliers sur les sites présentés,partagez vos informations avec la communauté des Amis de l'escalade !">
     <!--[if lt IE 9]>
@@ -102,7 +102,7 @@
             <hr>
 
             <div class="form-group row">
-                <label class="col-lg-6 col-form-label" for="hauteur">Hauteur maximale des voies</label>
+                <label class="col-lg-6 col-form-label" for="hauteur">Hauteur maximale des voies (en mètres)</label>
                 <div class="col-lg-6">
                     <input class="form-control" type="number" name="hauteur" id="hauteur" min="0" max="1000" th:field="*{height}">
                 </div>
@@ -111,9 +111,9 @@
 
             <div class="form-group row">
                 <label class="col-lg-6 col-form-label">Type d'escalade</label>
-                <div class="offset-6 col-lg-6" th:each="type : ${T(fr.lyasen.climbing.model.forms.Form_shareSite.ClimbType).values()}">
+                <div class="offset-6 col-lg-6" th:each="type : ${T(fr.lyasen.climbing.model.forms.ClimbType).values()}">
                         <label class="form-check">
-                            <input type="radio" class="form-check-input" th:id="${type}" th:value="${type}" th:text="${type.name}" th:field="*{climbType}" name="climbingType" checked>
+                            <input type="radio" class="form-check-input" th:id="${type}" th:value="${type}" th:text="${type.label}" th:field="*{climbType}" checked>
                             <label class="form-check-label" th:for="${type}" ></label>
                         </label>
                 </div>
@@ -122,9 +122,9 @@
 
             <div class="form-group row">
                 <label class="col-lg-6 col-form-label">Orientation</label>
-                <div class="offset-6 col-lg-6" th:each="orientation : ${T(fr.lyasen.climbing.model.forms.Form_shareSite.Orientation).values()}">
+                <div class="offset-6 col-lg-6" th:each="orientation : ${T(fr.lyasen.climbing.model.forms.Orientation).values()}">
                     <label class="escalade form-check">
-                        <input type="checkbox" class="form-check-input" th:id="${orientation}" th:value="${orientation}" th:text="${orientation.name}" th:field="*{orientation}">
+                        <input type="checkbox" class="form-check-input" th:id="${orientation}" th:value="${orientation}" th:text="${orientation.label}" th:field="*{orientation}">
                         <span class="checkmark"></span>
                         <label class="form-check-label" th:for="${orientation}"></label>
                     </label>
@@ -145,9 +145,10 @@
 
             <div class="form-group row">
                 <label class="col-lg-6 col-form-label" >Niveau(x) des sites</label>
-                <div class="col-lg-6" th:each="level : ${T(fr.lyasen.climbing.model.forms.Form_shareSite.SiteLevel).values()}">
-                    <label class="form-check">
-                        <input type="checkbox" class="form-check-input" th:id="${level}"  th:value="${level}" th:text="${level.name}" th:field="*{siteLevel}" name="level">
+                <div class="offset-6 col-lg-6" th:each="level : ${T(fr.lyasen.climbing.model.forms.SiteLevel).values()}">
+                    <label class="escalade form-check">
+                        <input type="checkbox" class="form-check-input" th:id="${level}"  th:value="${level}" th:text="${level.label}" th:field="*{siteLevel}">
+                        <span class="checkmark"></span>
                         <label class="form-check-label" th:for="${level}"></label>
                     </label>
                 </div>
@@ -162,9 +163,17 @@
             <hr>
 
             <div class="form-group row">
-                <label class="textarea" for="infossup">Vos Informations croustillantes</label>
-                <textarea class="form-control" id="infossup" rows="3" maxlength="1000" th:field="*{information}"
+                <label class="textarea" for="infosSup">Vos Informations croustillantes</label>
+                <textarea class="form-control" id="infosSup" rows="3" maxlength="1000" th:field="*{information}"
                           placeholder="Votre petite info perso, une anecdote, faites-nous en profiter..."></textarea>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-6 col-form-label" for="imageSite">Image du site (maximum 2 Mo)</label>
+                <!--  Taille maximale du fichier : 2 Mo  -->
+                <input type="hidden" name="MAX_FILE_SIZE" th:value="2000000" />
+                <input class="form-control" type="file" accept=".jpg, .jpeg, .png" name="imageSite" id="imageSite" multiple>
             </div>
             <hr class="hr">
 
@@ -209,17 +218,17 @@
                     <div class="footer-icon collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="#" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
+                                <a th:href="@{https://fr-fr.facebook.com/}" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
                                                                   title="Facebook" width="32" height="32"></a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
+                                <a th:href="@{https://twitter.com/?lang=fr}" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
                                                                   title="Twitter" width="32" height="32"></a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="#" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
+                                <a th:href="@{https://www.verti-call.com/}" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
                                                                   title="Verti-Call" width="32" height="32"></a>
                             </li>
                         </ul>
@@ -235,18 +244,16 @@
                     <div class="useful-links collapse navbar-collapse">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a href="https://www.ffme.fr/" class="nav-weight nav-link active"
+                                <a th:href="@{https://www.ffme.fr/}" class="nav-weight nav-link active"
                                    title="Fédération Française de la Montagne et de l'Escalade">FFME</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="https://climbingaway.fr/fr/" class="nav-weight nav-link"
-                                   title="Bouhouhou, venez me chercher !">Climbingaway</a>
+                                <a th:href="@{https://climbingaway.fr/fr/}" class="nav-weight nav-link">Climbingaway</a>
                             </li>
 
                             <li class="nav-item">
-                                <a href="https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe"
-                                   class="nav-weight nav-link" title="Quand l'heure du repas est encore Red ! Bubull, 2 gorgées coupe-faim !">Red Bull</a>
+                                <a th:href="@{https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe}" class="nav-weight nav-link">Red Bull</a>
                             </li>
                         </ul>
                     </div>
