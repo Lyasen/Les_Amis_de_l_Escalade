@@ -8,7 +8,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class JargonController {
     @GetMapping("/jargon")
     public ModelAndView jargon() {
-        ModelAndView model = new ModelAndView("MainPages/pagesHtml/jargon.html");
-        return model;
+        return new ModelAndView("MainPages/pagesHtml/jargon.html");
     }
 }

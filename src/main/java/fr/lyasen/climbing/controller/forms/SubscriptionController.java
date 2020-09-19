@@ -2,8 +2,6 @@ package fr.lyasen.climbing.controller.forms;
 
 import fr.lyasen.climbing.model.forms.Form_subscription;
 import fr.lyasen.climbing.service.forms.SubscriptionService;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
@@ -34,14 +32,11 @@ public class SubscriptionController {
     }
 
     @PostMapping("/subscription")
-    public String subscriptionSubmit(@Valid Form_subscription form, BindingResult bResult, Model model) {
-        if(bResult.hasErrors()) {
-            model.addAttribute("subscription", form);
+    public String subscriptionSubmit(@Valid @ModelAttribute("subscription") Form_subscription subscription, BindingResult bResult, Model model) {
+        if(bResult.hasErrors())
             return "Forms/Form/Form_subscription.html";
-        } else {
-            subscriptionService.save(form);
-            model.addAttribute("subscription", form);
-            return "redirect:main";
+        model.addAttribute("subscription", subscription);
+        subscriptionService.save(subscription);
+        return "redirect:main";
         }
-    }
 }

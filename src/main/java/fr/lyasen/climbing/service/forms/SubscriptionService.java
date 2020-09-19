@@ -1,13 +1,12 @@
 package fr.lyasen.climbing.service.forms;
 
 import fr.lyasen.climbing.dao.SubscriptionDao;
+import fr.lyasen.climbing.model.forms.ClimberLevel;
 import fr.lyasen.climbing.model.forms.Form_subscription;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.Errors;
-import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 /**
@@ -24,20 +23,9 @@ public class SubscriptionService implements Validator {
     public SubscriptionService() {}
 
     public Form_subscription save(Form_subscription formData) {
-        Form_subscription formModel = populateFormData (formData);
-        return subscriptionDao.save(formModel);
-    }
-
-    private Form_subscription populateFormData(Form_subscription formData) {
-        Form_subscription form = new Form_subscription();
-        form.setLastName(form.getLastName());
-        form.setFirstName(form.getFirstName());
-        form.setPseudo(form.getPseudo());
-        form.setEmail(form.getEmail());
-        form.setClimberLevel(form.getClimberLevel());
-        form.setPassword(passwordEncoder.encode(formData.getPassword()));
-        form.setConfirmPassword(form.getConfirmPassword());
-        return form;
+        formData.setPassword(passwordEncoder.encode(formData.getPassword()));
+        formData.setConfirmPassword(formData.getConfirmPassword());
+        return subscriptionDao.save(formData);
     }
 
     /**
@@ -52,20 +40,6 @@ public class SubscriptionService implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-        //  Objects validated by the validator
-        ValidationUtils.rejectIfEmptyOrWhitespace(
-                errors, "lastName", "Format error", "Votre nom doit comporter au minimum 2 caractères");
-        ValidationUtils.rejectIfEmptyOrWhitespace(
-                errors, "firstName", "Format error", "Votre prénom doit comporter au minimum 2 caractères");
-        ValidationUtils.rejectIfEmptyOrWhitespace(
-                errors, "pseudo", "Format error", "Votre pseudo doit comporter au minimum 3 caractères");
-        ValidationUtils.rejectIfEmptyOrWhitespace(
-                errors,"email", "Format error","Votre email n'est pas valide");
-        ValidationUtils.rejectIfEmpty(
-                errors, "password", "Empty field", "Votre mot de passe doit comprendre au moins 8 caractères");
-        ValidationUtils.rejectIfEmpty(
-                errors, "confirmPassword", "Empty field", "Vous devez confirmer votre mot de passe");
-
         Form_subscription form = (Form_subscription) target;
 
         if (form.getLastName().isEmpty())

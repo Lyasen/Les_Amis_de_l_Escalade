@@ -1,5 +1,8 @@
 package fr.lyasen.climbing.model.forms;
 
+import fr.lyasen.climbing.todo.Todo;
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
@@ -11,19 +14,17 @@ public class Form_subscription {
     @Column(name = "user_id", nullable = false, columnDefinition = "INT UNSIGNED")
     private int userId;
 
-
-    @Size(min = 2)
+    @Length(min = 2, max = 50)
     @Pattern(regexp = "^([a-zA-Z]+[\\s'.]?)+\\S$")
     @Column(name = "last_name", nullable = false, columnDefinition = "VARCHAR(50)")
     private String lastName;
 
-
-    @Size(min = 2)
+    @Length(min = 2, max = 50)
     @Pattern(regexp = "^([a-zA-Z]+[\\s'.]?)+\\S$")
     @Column(name = "first_name", nullable = false, columnDefinition = "VARCHAR(50)")
     private String firstName;
 
-    @Size(min = 3)
+    @Length(min = 3, max = 50)
     @Column(name = "pseudo", nullable = false, unique = true, columnDefinition = "VARCHAR(32)")
     private String pseudo;
 
@@ -36,14 +37,15 @@ public class Form_subscription {
     @Column(name = "climber_level")
     private ClimberLevel climberLevel;
 
-    @Min(8)
+    @Pattern(regexp = "(.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")
     @Column(name = "password", nullable = false, columnDefinition = "VARCHAR(255)")
     private String password;
 
-    @Column(name = "confirm_password", nullable = false, columnDefinition = "VARCHAR(255)")
+    @Todo(
+            commentary = "Etablir une méthode de comparaison avec le mot de passe créé afin d'établir que l'utilisateur souhaitant s'inscrire " +
+                    "inscrive bien le mot de passe qu'il a en tête"
+    )
     private String confirmPassword;
-
-    public Form_subscription() {}
 
     public Form_subscription(String lastName, String firstName, String pseudo, String email,
                              ClimberLevel climberLevel, String password, String confirmPassword) {
@@ -55,6 +57,8 @@ public class Form_subscription {
         this.password = password;
         this.confirmPassword = confirmPassword;
     }
+
+    public Form_subscription() {}
 
     public int getUserId() {
         return userId;
@@ -119,5 +123,4 @@ public class Form_subscription {
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
     }
-
 }

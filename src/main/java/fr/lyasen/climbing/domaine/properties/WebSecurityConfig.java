@@ -1,7 +1,6 @@
 package fr.lyasen.climbing.domaine.properties;
 
 import fr.lyasen.climbing.service.forms.SubscriptionService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -45,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder managerBuilder) throws Exception {
+    protected void configure(AuthenticationManagerBuilder managerBuilder) {
         managerBuilder.authenticationProvider(authenticationProvider());
     }
 }
