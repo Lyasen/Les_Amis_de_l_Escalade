@@ -1,0 +1,63 @@
+/*####################        CSS global pour le dossier sites         ####################*/
+/*	##	MEDIA QUERIES	##	*/
+@import "../../MainPages/pagesCss/mixin";
+
+/*	Variable's color	*/
+@import "../../MainPages/pagesCss/themeColor";
+
+/*	for the whole page	*/
+body {
+	@include media-max("tablet-lg") {
+		background-size: 100%;
+		background-color: gray;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+}
+
+/*	##	HEADER	##	**/
+span {
+	@include media-max("tablet") {
+		font-size: 0.8em;
+	}
+}
+
+/*	##	MAIN	##	**/
+h2 {
+	text-align: center;
+	padding: 20px 0 10px 0;
+	@include media-max("tablet") {
+		font-size: 1.3em;
+	}
+}
+.icon-description {
+	float: left;
+	padding-right: 10px;
+	padding-top: 3px;
+}
+.li {
+	list-style-type: none;
+	padding: 35px 0 35px 0;
+}
+.color-h2 {
+	color: orangered;
+	font-weight: bold;
+}
+p {
+	line-height: 1.5em;
+	font-size: 1.3rem;
+	@include media-between("phone", "desktop") {
+		font-size: 1em;
+	}
+	@include media-max("phone") {
+		font-size: 0.9em;
+	}
+}
+
+.btn {
+	@include media-max("tablet") {
+		font-size: 1em;
+	}
+}
+
+/*	##	FOOTER	##	**/

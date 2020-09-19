@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/Scss/pagesCss/global.css}">
+    <link rel="stylesheet" th:href="@{/Scss/FormCss/formShare.css}">
+    <link rel="shortcut icon" th:href="@{/img/img_pages/climb.png}" type="image/x-icon">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Engagement&display=swap}" rel="stylesheet">
+    <title>Partagez vos informations avec les Amis de l'escalade</title>
+    <meta name="description" content="Vous connaissez des endroits particuliers sur les sites présentés,partagez vos informations avec la communauté des Amis de l'escalade !">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="header-nav navbar navbar-expand navbar-dark">
+                    <div class="col-lg-5">
+                        <h1 class="title">Les amis de l'escalade</h1>
+                    </div>
+
+                    <div class="img col-lg-2">
+                        <img class="header-img" th:src="@{/img/img_pages/form_inscription.png}" alt="topo">
+                        <img class="header-img-2" th:src="@{/img/img_pages/form_inscription-64.png}" alt="topo">
+                    </div>
+
+                    <div class="col-lg-5">
+                        <h3 class="nav-h3">Partage d'infos</h3>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="offset-4">
+                <h3 class="nav-h3">Informations du site</h3>
+            </div>
+        </div>
+    </div>
+
+    <section class="row justify-content-center">
+        <form class="col-6" th:action="@{/share}" method="post" th:object="${site}">
+            <div class="form-group row">
+                <label class="col-lg-3 col-form-label" for="site">Nom du site</label>
+                <div class="col-lg-9">
+                    <input class="form-control" type="text" name="site" id="site"
+                           placeholder="Dolomites, Annot..." minlength="3" maxlength="20" th:field="*{name}" required>
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-4 col-form-label" for="country">Pays</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="country" id="country" minlength="2" maxlength="50"  th:field="*{country}" required>
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-4 col-form-label" for="region">Région</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="region" id="region" minlength="2" maxlength="50"  th:field="*{region}" required>
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-4 col-form-label" for="department">Département</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="department" id="department" minlength="2" maxlength="50"  th:field="*{department}" required>
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-4 col-form-label" for="village">Commune</label>
+                <div class="col-lg-8">
+                    <input class="form-control" type="text" name="village" id="village"
+                           placeholder="Commune principale à proximité du site" minlength="2" maxlength="50"  th:field="*{location}" required>
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-6 col-form-label" for="altitude">Altitude maximale au pied des voies (en mètres)</label>
+                <div class="col-lg-6">
+                    <input class="form-control" type="number" name="altitude" id="altitude" min="0" max="4000" th:field="*{altitude}">
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-6 col-form-label" for="hauteur">Hauteur maximale des voies (en mètres)</label>
+                <div class="col-lg-6">
+                    <input class="form-control" type="number" name="hauteur" id="hauteur" min="0" max="1000" th:field="*{height}">
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-6 col-form-label">Type d'escalade</label>
+                <div class="offset-6 col-lg-6" th:each="type : ${T(fr.lyasen.climbing.model.forms.ClimbType).values()}">
+                        <label class="form-check">
+                            <input type="radio" class="form-check-input" th:id="${type}" th:value="${type}" th:text="${type.label}" th:field="*{climbType}" checked>
+                            <label class="form-check-label" th:for="${type}" ></label>
+                        </label>
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-6 col-form-label">Orientation</label>
+                <div class="offset-6 col-lg-6" th:each="orientation : ${T(fr.lyasen.climbing.model.forms.Orientation).values()}">
+                    <label class="escalade form-check">
+                        <input type="checkbox" class="form-check-input" th:id="${orientation}" th:value="${orientation}" th:text="${orientation.label}" th:field="*{orientation}">
+                        <span class="checkmark"></span>
+                        <label class="form-check-label" th:for="${orientation}"></label>
+                    </label>
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-6 col-form-label">Nombre de voies</label>
+                <div class="col-lg-6">
+                    <label for="voiesMin">Minimum</label>
+                    <input class="form-control" type="number" name="voies" id="voiesMin" min="1" max="1000" th:field="*{lanesMin}">
+                    <label for="voiesMax">Maximum</label>
+                    <input class="form-control" type="number" name="voies" id="voiesMax" min="2" max="1000" th:field="*{lanesMax}">
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-6 col-form-label" >Niveau(x) des sites</label>
+                <div class="offset-6 col-lg-6" th:each="level : ${T(fr.lyasen.climbing.model.forms.SiteLevel).values()}">
+                    <label class="escalade form-check">
+                        <input type="checkbox" class="form-check-input" th:id="${level}"  th:value="${level}" th:text="${level.label}" th:field="*{siteLevel}">
+                        <span class="checkmark"></span>
+                        <label class="form-check-label" th:for="${level}"></label>
+                    </label>
+                </div>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="textarea" for="restrictions">Restrictions</label>
+                <textarea class="form-control" id="restrictions" rows="3" maxlength="1000" th:field="*{restrictions}"
+                          placeholder="Indiquez si des restrictions de quelques sortes sont applicables"></textarea>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="textarea" for="infosSup">Vos Informations croustillantes</label>
+                <textarea class="form-control" id="infosSup" rows="3" maxlength="1000" th:field="*{information}"
+                          placeholder="Votre petite info perso, une anecdote, faites-nous en profiter..."></textarea>
+            </div>
+            <hr>
+
+            <div class="form-group row">
+                <label class="col-lg-6 col-form-label" for="imageSite">Image du site (maximum 2 Mo)</label>
+                <!--  Taille maximale du fichier : 2 Mo  -->
+                <input type="hidden" name="MAX_FILE_SIZE" th:value="2000000" />
+                <input class="form-control" type="file" accept=".jpg, .jpeg, .png" name="imageSite" id="imageSite" multiple>
+            </div>
+            <hr class="hr">
+
+            <div class="row">
+                <div class="offset-2 col-3">
+                    <div class="btn-wrapper">
+                        <button type="reset" class="btn">Annulez</button>
+                    </div>
+                    <canvas></canvas>
+                </div>
+                <div class="offset-4 col-2">
+                    <div class="btn-wrapper">
+                        <button type="submit" class="btn">Envoyez</button>
+                    </div>
+                    <canvas></canvas>
+                </div>
+            </div>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="footer-first-nav col-6">
+                <nav class="first-nav navbar navbar-expand navbar-dark">
+                    <div class="collapse navbar-collapse justify-content-center">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="#" class="nav-weight nav-link">A propos...</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="#" class="nav-weight nav-link active">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="footer-second-nav col-6">
+                <nav class="icon navbar navbar-expand navbar-dark">
+                    <div class="footer-icon collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a th:href="@{https://fr-fr.facebook.com/}" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
+                                                                  title="Facebook" width="32" height="32"></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a th:href="@{https://twitter.com/?lang=fr}" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
+                                                                  title="Twitter" width="32" height="32"></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a th:href="@{https://www.verti-call.com/}" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
+                                                                  title="Verti-Call" width="32" height="32"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <nav class="links navbar navbar-expand navbar-dark">
+                    <h6>Liens utiles:</h6>
+                    <div class="useful-links collapse navbar-collapse">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a th:href="@{https://www.ffme.fr/}" class="nav-weight nav-link active"
+                                   title="Fédération Française de la Montagne et de l'Escalade">FFME</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a th:href="@{https://climbingaway.fr/fr/}" class="nav-weight nav-link">Climbingaway</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a th:href="@{https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe}" class="nav-weight nav-link">Red Bull</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

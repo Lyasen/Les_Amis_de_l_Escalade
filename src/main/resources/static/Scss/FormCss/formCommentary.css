@@ -1,0 +1,100 @@
+/*####################        form_partage2.html         ####################*/
+/*	##	MEDIA QUERIES	##	*/
+/* from... */
+/* to... */
+/* from... to... */
+/*	Variable's color	*/
+/*	for the whole page	*/
+body {
+  background-image: url(../../img/img_pages/bg-commentary.jpg);
+}
+
+textarea:invalid {
+  background-color: red;
+  opacity: 0.6;
+}
+
+/*	##	HEADER	##	*/
+header {
+  margin-bottom: 100px;
+}
+
+@media screen and (max-width: 575px) {
+  header {
+    margin-bottom: 0;
+  }
+}
+
+.main-nav {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.header-img {
+  top: -10px;
+}
+
+@media screen and (max-width: 575px) {
+  .header-img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .header-img-2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .title {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .title {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .nav-h3 {
+    font-size: 3em;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .nav-h3 {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .nav-h3 {
+    margin-left: -140px;
+  }
+}
+
+/*	##	MAIN	##	*/
+textarea {
+  background: white;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(255, 255, 255, 0.5)), to(rgba(251, 251, 251, 0.5)));
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(251, 251, 251, 0.5) 100%);
+  border-color: orangered;
+  -webkit-box-shadow: 60px -16px orangered;
+          box-shadow: 60px -16px orangered;
+  border-radius: 10px;
+  color: black;
+  font-weight: 800;
+  font-family: fantasy;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/*	##	FOOTER	##	*/
+/*# sourceMappingURL=formCommentary.css.map */

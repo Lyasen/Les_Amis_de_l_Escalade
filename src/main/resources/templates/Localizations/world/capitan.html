@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/Scss/pagesCss/global.css}">
+    <link rel="stylesheet" th:href="@{/Scss/sitesCss/globalSites.css}">
+    <link rel="stylesheet" th:href="@{/Scss/sitesCss/world/capitan.css}">
+    <link rel="shortcut icon" th:href="@{/img/img_pages/climb.png}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Engagement&display=swap" rel="stylesheet">
+    <title>El Capitan</title>
+    <meta name="description"
+        content="Tous les sites répertoriés par les amis de l'escalade, pour les amateurs et les professionnels, pour les locaux et les nomades">
+</head>
+
+<body>
+    <header id="capitan">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+            <!--    Logo    -->
+            <img th:src="@{/img/img_pages/mountaintop.png}" alt="Logo">
+
+            <!--    Bouton  -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="responsive">
+                <!--    Icone du bouton -->
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--    Les liens du menu englobés dans un div   -->
+            <div class="collapse navbar-collapse" id="responsive">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a th:href="@{/MainPages/pagesHtml/main.html}" class="nav-link active">Escalader jusqu'à l'accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="@{/MainPages/pagesHtml/sites.html}" class="nav-link">Découvrez les Sites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="@{/MainPages/pagesHtml/topos.html}" class="nav-link">Réservez votre topo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="@{/MainPages/pagesHtml/jargon.html}" class="nav-link">Le jargon du grimpeur</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <ul>
+                        <li class="li">
+                            <span>
+                                <img class="icon-description" th:src="@{/img/img_sites/rochers.png}" alt="Rochers">
+                            </span>
+                            <span>Type</span><br><span>Montagne</span>
+                        </li>
+                        <li class="li">
+                            <span>
+                                <img class="icon-description" th:src="@{/img/img_sites/hauteur.png}" alt="hauteur">
+                            </span>
+                            <span>Hauteur maximales des voies</span><br><span>1 000 mètres</span>
+                        </li>
+                        <li class="li">
+                            <span>
+                                <img class="icon-description" th:src="@{/img/img_sites/hauteur_voies.png}" alt="Hauteur des voies">
+                            </span>
+                            <span>Altitude maximale au pied des voies</span><br><span>2 307 mètres</span>
+                        </li>
+                        <li class="li">
+                            <span>
+                                <img class="icon-description" th:src="@{/img/img_sites/orientation.png}" alt="Orientaiton">
+                            </span>
+                            <span>Orientation</span><br><span>Toutes</span>
+                        </li>
+                        <li class="li">
+                            <span>
+                                <img class="icon-description" th:src="@{/img/img_sites/voies.png}" alt="Voies">
+                            </span>
+                            <span>Nombre de voies</span><br><span>Plus de 1000 voies</span>
+                        </li>
+                        <li class="li">
+                            <span>
+                                <img class="icon-description" th:src="@{/img/img_sites/cotation.png}" alt="Cotation">
+                            </span>
+                            <span>Cotations</span><br><span>Du 5b au 9a</span><br><span>Débutant à expert</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6">
+                    <h2><a class="color-h2" href="https://earth.google.com/web/@37.7340631,-119.6375199,2304.61755558a,814.62782201d,35y,0h,45t,0r/data=Ck0aSxJFCiUweDgwOTZlZGQ4MjRkYjhmYmQ6MHg1N2FkY2M3NjJmYjNkNDAzGaJCdXPx3UJAIRJCrKPP6F3AKgpFbCBDYXBpdGFuGAIgASgC" target="_blank" title="Admirez sur Google Earth">El Capitan - Yosemite - Etats-Unis</a></h2>
+                    <p>
+                        Mecque californienne de l’escalade, le Yosemite est sans doute le site d’escalade le
+                        plus
+                        réputé au monde, mais malgré son intense fréquentation, la magie opère toujours. Ses
+                        big
+                        walls imposants dominent la Vallée, témoins silencieux des plus incroyables
+                        histoires de
+                        grimpe.
+                    </p>
+                    <p>
+                        Difficile de ne choisir qu’un seul site dans le Yosemite, le Half Dome et El Capitan
+                        se
+                        disputent la vedette, et plein de sites secondaires méritent eux aussi le détour.
+                        Mais
+                        El
+                        Cap reste un mythe à lui tout seul, et bon nombre de ses voies hantent les rêves des
+                        grimpeurs du monde entier.
+                    </p>
+                    <p>
+                        The Nose est sans doute la plus célèbre, tandis que le solo totalement fou d’Alex
+                        Honnold a
+                        braqué tous les projecteurs sur Freerider (7c+) en juin dernier. Ajoutons aussi
+                        l’incroyablement difficile Dawn Wall, avec 32 longueurs dont deux 9a, libéré l’an
+                        dernier
+                        par Adam Ondra ! Il existe heureusement sur El Cap des voies plus accessibles
+                        techniquement
+                        (Face Ouest, East Buttress par exemple), qui permettent aux passionnés de
+                        s’imprégner de
+                        l’ambiance magique d’El Cap.
+                    </p>
+
+                    <ul>
+                        <li class="li">
+                            <span>
+                                <img th:src="@{/img/img_sites/restrictions.png}" alt="Restrictions" class="icon-description">
+                            </span>
+                            <span>Restrictions possibles</span><br><span></span>
+                        </li>
+                        <li class="li">
+                            <span>
+                                <img th:src="@{/img/img_sites/commune.png}" alt="Commune" class="icon-description">
+                            </span>
+                            <span>Commune la plus proche du site</span><br><span>El Capitan, Californie 95389, États-Unis</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="col-12"><a class="btn" th:href="@{commentary}" role="button">Poster un commentaire</a></div>
+                </div>
+            </div>
+            <div class="border border-dark rounded row">
+                <div class="col-12">
+                    <p>Les commentaires viendront s'ajouter ici</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-first-nav col-6">
+                    <nav class="first-nav navbar navbar-expand navbar-dark">
+                        <div class="collapse navbar-collapse justify-content-center">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-weight nav-link">A propos...</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-weight nav-link active">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="footer-second-nav col-6">
+                    <nav class="icon navbar navbar-expand navbar-dark">
+                        <div class="footer-icon collapse navbar-collapse justify-content-end">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="https://fr-fr.facebook.com/" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
+                                            title="Facebook" width="32" height="32"></a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="https://twitter.com/?lang=fr" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
+                                            title="Twitter" width="32" height="32"></a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="https://www.verti-call.com/" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
+                                            title="Verti-Call" width="32" height="32"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <nav class="links navbar navbar-expand navbar-dark">
+                        <h6>Liens utiles:</h6>
+                        <div class="useful-links collapse navbar-collapse">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="https://www.ffme.fr/" class="nav-weight nav-link active"
+                                        title="Fédération Française de la Montagne et de l'Escalade">FFME</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="https://climbingaway.fr/fr/" class="nav-weight nav-link"
+                                        title="Climbingaway: Waouh !  C'est haut ! J'ai le vertige !">Climbingaway</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe"
+                                        class="nav-weight nav-link" title="Plastique à bulles ou Red Bull ?">Red Bull</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
+</body>
+</html>

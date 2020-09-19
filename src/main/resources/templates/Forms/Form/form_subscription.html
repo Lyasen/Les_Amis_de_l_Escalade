@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css}" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/Scss/pagesCss/global.css}">
+    <link rel="stylesheet" th:href="@{/Scss/FormCss/formInscription.css}">
+    <link rel="shortcut icon" th:href="@{/img/img_pages/climb.png}" type="image/x-icon">
+    <link th:href="@{https://fonts.googleapis.com/css?family=Engagement&display=swap}" rel="stylesheet">
+    <title th:text="#{head.label.title}"></title>
+    <meta name="description" content="Inscrivez-vous à la communauté 'Les amis de l'escalade'!">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="header-nav navbar navbar-expand navbar-dark">
+                        <div class="col-5">
+                            <h1 class="title">Les amis de l'escalade</h1>
+                        </div>
+
+                        <div class="col-2">
+                            <img class="header-img" th:src="@{/img/img_pages/form_inscription.png}" alt="topo">
+                            <img class="header-img-2" th:src="@{/img/img_pages/form_inscription-64.png}" alt="topo">
+                        </div>
+
+                        <div class="col-5">
+                            <h3 class="nav-h3">Inscrivez-vous !</h3>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="main-space row justify-content-center">
+            <form class="inscription-form-space col-6" th:action="@{/subscription}" th:object="${subscription}" method="post">
+                <div class="form-group row">
+                    <label class="col-lg-3 col-md-4 col-form-label" for="lastname">Nom</label>
+                    <div class="col-lg-9 col-md-12">
+                        <input class="form-control" type="text" name="lastname" id="lastname" th:field="*{lastName}" required>
+                        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-md-5 col-form-label" for="firstname">Prénom</label>
+                    <div class="col-lg-9 col-md-12">
+                        <input class="form-control" type="text" name="firstname" id="firstname" th:field="*{firstName}" required>
+                        <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-md-4 col-form-label" for="pseudo">Pseudo</label>
+                    <div class="col-lg-9 col-md-12">
+                        <input class="form-control" type="text" name="pseudo" id="pseudo" placeholder="Rintintin" th:field="*{pseudo}" required>
+                        <span th:if="${#fields.hasErrors('pseudo')}" th:errors="*{pseudo}"></span>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group row">
+                    <label class="col-lg-3 col-md-4 col-form-label" for="email">Email</label>
+                    <div class="col-lg-9 col-md-12">
+                        <input class="form-control" type="email" name="email" id="email" placeholder="prenomnom@mail.com" th:field="*{email}" required>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group row">
+                    <label class="col-lg-4 col-md-7 col-form-label" for="practitioner">Niveau de grimpe</label>
+                    <div class="col-lg-8 col-md-8" >
+                        <select class="form-control custom-select" name="practitioner" id="practitioner" th:field="*{climberLevel}" >
+                            <option class="level" th:each="level : ${T(fr.lyasen.climbing.model.forms.ClimberLevel).values()}"
+                                  th:id="${level}" th:value="${level}" th:text="${level.label}"></option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group row">
+                    <label class="col-lg-4 col-md-7 col-form-label" for="password">Créez votre mot de passe</label>
+                    <div class="col-lg-8 col-md-12">
+                        <input class="form-control" type="password" name="password" id="password" th:field="*{password}" required>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group row">
+                    <label class="col-lg-4 col-md-8 col-form-label" for="confirm_password">Confirmez votre mot de passe</label>
+                    <div class="col-lg-8 col-md-12">
+                        <input class="form-control" type="password" name="confirm_password" id="confirm_password" th:field="*{confirmPassword}">
+                    </div>
+                </div>
+                <hr class="hr">
+                <div class="row">
+                    <div class="offset-2 col-3">
+                        <div class="btn-wrapper">
+                            <button type="reset" value="Reset" class="btn">Annulez</button>
+                        </div>
+                        <canvas></canvas>
+                    </div>
+                    <div class="offset-4 col-2">
+                        <div class="btn-wrapper">
+                            <button type="submit" value="Submit" class="btn">Envoyez</button>
+                        </div>
+                        <canvas></canvas>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="footer-first-nav col-6">
+                    <nav class="first-nav navbar navbar-expand navbar-dark">
+                        <div class="collapse navbar-collapse justify-content-center">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-weight nav-link">A propos...</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-weight nav-link active">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+                <div class="footer-second-nav col-6">
+                    <nav class="icon navbar navbar-expand navbar-dark">
+                        <div class="footer-icon collapse navbar-collapse justify-content-end">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a th:href="@{https://fr-fr.facebook.com/}" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook"
+                                            title="Facebook" width="32" height="32"></a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a th:href="@{https://twitter.com/?lang=fr}" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter"
+                                            title="Twitter" width="32" height="32"></a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a th:href="@{https://www.verti-call.com/}" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call"
+                                            title="Verti-Call" width="32" height="32"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <nav class="links navbar navbar-expand navbar-dark">
+                        <h6>Liens utiles:</h6>
+                        <div class="useful-links collapse navbar-collapse">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a th:href="@{https://www.ffme.fr/}" class="nav-weight nav-link active"
+                                        title="Fédération Française de la Montagne et de l'Escalade">FFME</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a th:href="@{https://climbingaway.fr/fr/}" class="nav-weight nav-link" >Climbingaway</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a th:href="@{https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe}" class="nav-weight nav-link">Red Bull</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
