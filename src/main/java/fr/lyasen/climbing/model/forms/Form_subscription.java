@@ -14,22 +14,26 @@ public class Form_subscription {
     @Column(name = "user_id", nullable = false, columnDefinition = "INT UNSIGNED")
     private int userId;
 
-    @Length(min = 2, max = 50)
-    @Pattern(regexp = "^([a-zA-Z]+[\\s'.]?)+\\S$")
+    @NotBlank(message = "Votre nom est requis")
+    @Length(min = 2, max = 50, message = "Votre nom doit comporter entre {min} et {max} caractères")
+    @Pattern(regexp = "^([a-zA-Z]+[\\s'.]?)+\\S$", message = "Le format de votre nom est incorrect")
     @Column(name = "last_name", nullable = false, columnDefinition = "VARCHAR(50)")
     private String lastName;
 
-    @Length(min = 2, max = 50)
-    @Pattern(regexp = "^([a-zA-Z]+[\\s'.]?)+\\S$")
+    @NotBlank(message = "Votre prénom est requis")
+    @Length(min = 2, max = 50, message = "Votre prénom doit comporter entre {min} et {max} caractères")
+    @Pattern(regexp = "^([a-zA-Z]+[\\s'.]?)+\\S$", message = "Le format de votre prénom est incorrect")
     @Column(name = "first_name", nullable = false, columnDefinition = "VARCHAR(50)")
     private String firstName;
 
-    @Length(min = 3, max = 50)
+    @NotBlank(message = "Un pseudo est requis")
+    @Length(min = 3, max = 50, message = "Votre pseudo doit comporter entre {min} et {max} caractères")
     @Column(name = "pseudo", nullable = false, unique = true, columnDefinition = "VARCHAR(32)")
     private String pseudo;
 
-    @Email
-    @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
+    @Email(message = "Votre email est requis")
+    @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?",
+             message = "Le format de votre email est incorrect")
     @Column(name = "email", nullable = false, columnDefinition = "VARCHAR(255)")
     private String email;
 
@@ -42,9 +46,11 @@ public class Form_subscription {
     private String password;
 
     @Todo(
-            commentary = "Etablir une méthode de comparaison avec le mot de passe créé afin d'établir que l'utilisateur souhaitant s'inscrire " +
+            commentary = "Etablir une méthode de comparaison avec le mot de passe créé afin de confirmer que l'utilisateur souhaitant s'inscrire " +
                     "inscrive bien le mot de passe qu'il a en tête"
     )
+
+    @NotBlank(message = "Vous devez confirmer votre mot de passe")
     private String confirmPassword;
 
     public Form_subscription(String lastName, String firstName, String pseudo, String email,

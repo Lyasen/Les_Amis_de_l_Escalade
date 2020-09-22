@@ -2,6 +2,8 @@ package fr.lyasen.climbing.controller.forms;
 
 import fr.lyasen.climbing.model.forms.Form_subscription;
 import fr.lyasen.climbing.service.forms.SubscriptionService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;

@@ -20,8 +20,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private SubscriptionService subscriptionService;
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/**").permitAll().and().formLogin().defaultSuccessUrl("/main", true);
+    protected void configure(AuthenticationManagerBuilder managerBuilder) {
+        managerBuilder.authenticationProvider(authenticationProvider());
     }
 
     /*
@@ -35,16 +35,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return authenticationProvider;
     }
 
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests().antMatchers("/**").permitAll().and().formLogin().defaultSuccessUrl("/main", true);
+    }
+
     /*
      *  Configuration for encrypting a password
      */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
-    }
-
-    @Override
-    protected void configure(AuthenticationManagerBuilder managerBuilder) {
-        managerBuilder.authenticationProvider(authenticationProvider());
     }
 }
