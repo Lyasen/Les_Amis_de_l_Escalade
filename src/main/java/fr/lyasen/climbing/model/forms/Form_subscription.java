@@ -7,7 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 
 @Entity
-@Table(name = "subscription")
+@Table(name = "subscription", schema = "public")
 public class Form_subscription {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,7 +34,7 @@ public class Form_subscription {
     @Email(message = "Votre email est requis")
     @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?",
              message = "Le format de votre email est incorrect")
-    @Column(name = "email", nullable = false, columnDefinition = "VARCHAR(255)")
+    @Column(name = "email", nullable = false, unique = true, columnDefinition = "VARCHAR(255)")
     private String email;
 
     @Enumerated(EnumType.STRING)

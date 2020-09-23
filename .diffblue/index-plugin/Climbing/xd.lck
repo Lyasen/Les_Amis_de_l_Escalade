@@ -1,4 +1,4 @@
-Private property of Exodus: 3992@Asus75
+Private property of Exodus: 864@Asus75
 
 jetbrains.exodus.io.LockingManager.lock(LockingManager.kt:89)
 jetbrains.exodus.io.LockingManager.lock(LockingManager.kt:40)
@@ -20,7 +20,7 @@ com.diffblue.cover.h.b.c(SourceFile:133)
 com.diffblue.cover.h.b.<init>(SourceFile:85)
 com.diffblue.cover.h.e.a(SourceFile:147)
 com.diffblue.cover.h.e.a(SourceFile:230)
-java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1737)
+java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705)
 com.diffblue.cover.h.e.a(SourceFile:229)
 com.diffblue.intellij.plugin.session.RegisterModuleChangeListenerStartupTask.a(SourceFile:134)
 com.diffblue.cover.h.a.a(SourceFile:203)
