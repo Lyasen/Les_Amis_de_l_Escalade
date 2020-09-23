@@ -3,9 +3,18 @@ package fr.lyasen.climbing.model.forms;
 import fr.lyasen.climbing.todo.Todo;
 import org.hibernate.validator.constraints.Length;
 
-import javax.management.relation.Role;
-import javax.persistence.*;
-import javax.validation.constraints.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 
 @Entity
@@ -37,7 +46,7 @@ public class Form_subscription implements Serializable {
 
     @Email(message = "Votre email est requis")
     @Pattern(regexp = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?",
-             message = "Le format de votre email est incorrect")
+            message = "Le format de votre email est incorrect")
     @Column(name = "email", nullable = false, unique = true, columnDefinition = "VARCHAR(255)")
     private String email;
 
@@ -54,12 +63,13 @@ public class Form_subscription implements Serializable {
                     "inscrive bien le mot de passe qu'il a en tête"
     )
 
+    @Transient // Do not store clear password
     @NotBlank(message = "Vous devez confirmer votre mot de passe")
     private String confirmPassword;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    private Role role;
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name="role_id", referencedColumnName = "role_id")
+//    private Role role;
 
     public Form_subscription(String lastName, String firstName, String pseudo, String email,
                              ClimberLevel climberLevel, String password, String confirmPassword) {
@@ -72,7 +82,8 @@ public class Form_subscription implements Serializable {
         this.confirmPassword = confirmPassword;
     }
 
-    public Form_subscription() {}
+    public Form_subscription() {
+    }
 
     public int getUserId() {
         return userId;
@@ -138,7 +149,11 @@ public class Form_subscription implements Serializable {
         this.confirmPassword = confirmPassword;
     }
 
-    public Role getRole() { return role; }
+//    public Role getRole() {
+//        return role;
+//    }
 
-    public void setRole(Role role) { this.role = role; }
+//    public void setRole(Role role) {
+//        this.role = role;
+//    }
 }

@@ -23,8 +23,8 @@ public class WebConfiguration implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/connection").setViewName("connection");
-        registry.addViewController("/main").setViewName("main");
-        registry.addViewController("/").setViewName("connection");
+        registry.addViewController("/connection").setViewName("Forms/form/form_connection");
+        registry.addViewController("/main").setViewName("MainPages/pagesHtml/main.html");
+        registry.addViewController("/").setViewName("Forms/form/form_connection");
     }
 }
