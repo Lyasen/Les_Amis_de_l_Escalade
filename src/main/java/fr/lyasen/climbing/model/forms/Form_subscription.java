@@ -3,12 +3,16 @@ package fr.lyasen.climbing.model.forms;
 import fr.lyasen.climbing.todo.Todo;
 import org.hibernate.validator.constraints.Length;
 
+import javax.management.relation.Role;
 import javax.persistence.*;
 import javax.validation.constraints.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "subscription", schema = "public")
-public class Form_subscription {
+public class Form_subscription implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id", nullable = false, columnDefinition = "INT UNSIGNED")
@@ -52,6 +56,10 @@ public class Form_subscription {
 
     @NotBlank(message = "Vous devez confirmer votre mot de passe")
     private String confirmPassword;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private Role role;
 
     public Form_subscription(String lastName, String firstName, String pseudo, String email,
                              ClimberLevel climberLevel, String password, String confirmPassword) {
@@ -129,4 +137,8 @@ public class Form_subscription {
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
     }
+
+    public Role getRole() { return role; }
+
+    public void setRole(Role role) { this.role = role; }
 }

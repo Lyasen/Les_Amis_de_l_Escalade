@@ -46,6 +46,9 @@
             
             <form class="connexion-form-space col-6" th:action="@{/connection}" method="post">
                 <div class="form-group row">
+                    <div align="center" th:if="${param.error}">
+                        <p style="font-size:20; color:#FF1C19;">Pseudo ou mot de passe invalide</p>
+                    </div>
                     <label class="col-m-3 col-sm-5 col-form-label" for="pseudo">Votre pseudo</label>
                     <div class="col-m-9 col-sm-7">
                         <input class="form-control" type="text" name="pseudo" id="pseudo" placeholder="Entrez votre pseudo" required>
