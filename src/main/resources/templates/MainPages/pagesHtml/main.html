@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<html lang="fr" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8">
@@ -27,7 +27,8 @@
             <form class="col-lg-4 form-inline" action="/recherche/" method="get">
                 <fieldset>
                     <div class="input-group">
-                        <input id="oSaisie" name="oSaisie" type="text" class="form-control" aria-label="Saisie de mots clés" required="required">
+                        <input id="oSaisie" name="oSaisie" type="text" class="form-control"
+                               aria-label="Saisie de mots clés" required="required">
                         <div class="input-group-append">
                             <button class="fafa" type="submit"><i class="fa fa-search"></i>Recherche</button>
                         </div>
@@ -36,17 +37,20 @@
             </form>
             <div class="connexion col-lg-4">
                 <div class="btn-group">
-                    <button type="button" class="drop">On se connecte les amis...</button>
-                    <button type="button" id="menu" class="down dropdown-toggle dropdown-toggle-split" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                    <div sec:authorize="isAnonymous()">
+                        <button type="button" class="drop">On se connecte les amis...</button>
+                        <button type="button" id="menu" class="down dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
                             <span class="sr-only">On se connecte les amis...</span>
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="menu">
-                        <a class="dropdown-item" th:href="@{/connection}">Mon espace membre</a>
-                        <a class="dropdown-item" th:href="@{/subscription}">Nouveau ? Inscription gratuite</a>
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="menu">
+                            <a class="dropdown-item" th:href="@{/connection}">Mon espace membre</a>
+                            <a class="dropdown-item" th:href="@{/subscription}">Nouveau ? Inscription gratuite</a>
+                        </div>
                     </div>
-                    <div>
-                        <a th:href="@{/logout}">
+                    <div sec:authorize="isAuthenticated()">
+                        <a th:href="@{/perform_logout}">
                             <button type="button">Déconnexion</button>
                         </a>
                     </div>
@@ -92,7 +96,8 @@
                 <div class="carousel-inner">
 
                     <div class="carousel-item active">
-                        <img class="d-block w-100" th:src="@{/img/img_pages/escalade_1.jpg}" width="1110" height="450" alt="escalade">
+                        <img class="d-block w-100" th:src="@{/img/img_pages/escalade_1.jpg}" width="1110" height="450"
+                             alt="escalade">
                         <div class="carousel-caption">
                             <div class="text">
                                 <h1>Bienvenue à tous les passionnés d'escalade</h1>
@@ -113,10 +118,12 @@
                                 </p>
                             </div>
                         </div>
-                        <img class="d-block w-100" th:src="@{/img/img_pages/escalade_2.jpg}" width="1110" height="450" alt="escalade">
+                        <img class="d-block w-100" th:src="@{/img/img_pages/escalade_2.jpg}" width="1110" height="450"
+                             alt="escalade">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" th:src="@{/img/img_pages/escalade_3.jpg}" width="1110" height="450" alt="escalade">
+                        <img class="d-block w-100" th:src="@{/img/img_pages/escalade_3.jpg}" width="1110" height="450"
+                             alt="escalade">
                         <div class="carousel-caption">
                             <div class="text">
                                 <p>
@@ -154,15 +161,21 @@
                     <div class="footer-icon collapse navbar-collapse justify-content-end">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a th:href="@{https://fr-fr.facebook.com/}" class="nav-link"><img th:src="@{/img/img_pages/facebook.png}" alt="facebook" title="Facebook" width="32" height="32"></a>
+                                <a th:href="@{https://fr-fr.facebook.com/}" class="nav-link"><img
+                                        th:src="@{/img/img_pages/facebook.png}" alt="facebook" title="Facebook"
+                                        width="32" height="32"></a>
                             </li>
 
                             <li class="nav-item">
-                                <a th:href="@{https://twitter.com/?lang=fr}" class="nav-link"><img th:src="@{/img/img_pages/twitter.png}" alt="twitter" title="Twitter" width="32" height="32"></a>
+                                <a th:href="@{https://twitter.com/?lang=fr}" class="nav-link"><img
+                                        th:src="@{/img/img_pages/twitter.png}" alt="twitter" title="Twitter" width="32"
+                                        height="32"></a>
                             </li>
 
                             <li class="nav-item">
-                                <a th:href="@{https://www.verti-call.com/}" class="nav-link"><img th:src="@{/img/img_pages/verti-call.png}" alt="verti-call" title="Verti-Call" width="32" height="32"></a>
+                                <a th:href="@{https://www.verti-call.com/}" class="nav-link"><img
+                                        th:src="@{/img/img_pages/verti-call.png}" alt="verti-call" title="Verti-Call"
+                                        width="32" height="32"></a>
                             </li>
                         </ul>
                     </div>
@@ -177,7 +190,8 @@
                     <div class="useful-links collapse navbar-collapse">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a th:href="@{https://www.ffme.fr/}" class="nav-weight nav-link active" title="Fédération Française de la Montagne et de l'Escalade">FFME</a>
+                                <a th:href="@{https://www.ffme.fr/}" class="nav-weight nav-link active"
+                                   title="Fédération Française de la Montagne et de l'Escalade">FFME</a>
                             </li>
 
                             <li class="nav-item">
@@ -185,7 +199,8 @@
                             </li>
 
                             <li class="nav-item">
-                                <a th:href="@{https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe}" class="nav-weight nav-link">Red Bull</a>
+                                <a th:href="@{https://www.redbull.com/fr-fr/meilleurs-sites-escalade-europe}"
+                                   class="nav-weight nav-link">Red Bull</a>
                             </li>
                         </ul>
                     </div>
@@ -196,7 +211,9 @@
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

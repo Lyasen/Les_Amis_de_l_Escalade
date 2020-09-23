@@ -44,7 +44,7 @@
         <h3 class="main-h3">Se connecter!</h3>
         <section class="row justify-content-center">
             
-            <form class="connexion-form-space col-6" th:action="@{/connection}" method="post">
+            <form class="connexion-form-space col-6" th:action="@{/perform_login}" method="post">
                 <div class="form-group row">
                     <div align="center" th:if="${param.error}">
                         <p style="font-size:20; color:#FF1C19;">Pseudo ou mot de passe invalide</p>

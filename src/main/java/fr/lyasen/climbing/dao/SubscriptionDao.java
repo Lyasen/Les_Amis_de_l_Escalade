@@ -10,6 +10,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface SubscriptionDao extends JpaRepository<Form_subscription, Integer> {
-    @Query("SELECT user FROM Form_subscription WHERE user.pseudo=:pseudoOrEmail OR user.email=:pseudoOrEmail")
+    @Query("SELECT user FROM Form_subscription user WHERE user.pseudo=:pseudoOrEmail OR user.email=:pseudoOrEmail")
     Form_subscription findByUserNameOrEmail(String pseudoOrEmail);
 }
